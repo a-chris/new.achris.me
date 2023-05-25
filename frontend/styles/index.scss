@@ -2,16 +2,15 @@
   --black-almost: #11191f;
   --black-light: #2d2d2d;
   --white-almost: #f2f2f2;
-  --body-background: floralwhite;
+  // --body-background: floralwhite;
   --body-color: #444;
   --heading-color: black;
-  --action-color: black;
+  --action-color: #ffb088;
   --block-spacing-vertical: 8em;
   --code-color: black !important;
 }
 
 body {
-  background: var(--body-background);
   color: var(--body-color);
   font-family: 'Raleway', -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -50,6 +49,7 @@ nav {
   }
   a {
     font-weight: 400;
+    color: white;
   }
   .current-page {
     text-decoration: underline;
@@ -59,7 +59,7 @@ nav {
 }
 
 a {
-  color: var(--action-color);
+  // color: var(--action-color);
 }
 
 body > header {
@@ -161,7 +161,7 @@ article {
   margin: 0;
 }
 
-#skills, #languages {
+h1,h2,h3 {
   text-align: center;
 }
 
@@ -198,7 +198,7 @@ article {
     width: 22px;
     height: 22px;
     right: -10px;
-    background-color: white;
+    background-color: var(--body-color);
     border: 3px solid var(--color);
     top: 15px;
     border-radius: 50%;
@@ -247,6 +247,10 @@ article {
     background-color: white;
     position: relative;
     border-radius: 6px;
+
+    p {
+      color: var(--body-color) !important;
+    }
   }
 
   /* Media queries - Responsive timeline on screens less than 600px wide */

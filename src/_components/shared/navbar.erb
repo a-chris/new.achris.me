@@ -9,7 +9,7 @@
 <header>
   <img src="<%= relative_url '/images/avatar.webp' %>" alt="Logo" style="width:140px;height:140px;filter:drop-shadow(3px 3px 5px #6969694a);"/>
   <h1 style="margin:10px;">Christian Toscano</h1>
-  <div>
+  <div style="background-color:white;width:fit-content;margin:auto;">
     <% @metadata.contacts.each do |c| %>
       <a href="<%= c.url %>" style="padding:20px;">
         <img src="/images/contacts/<%= c.name.downcase %>.svg" style="width:20px;" />
