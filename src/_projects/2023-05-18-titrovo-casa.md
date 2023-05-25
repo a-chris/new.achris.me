@@ -13,4 +13,4 @@ technologies:
   - Telegram
 ---
 
-Lofi Cafè is a selection of the best cafè in which you can study, work or just read a good book! I've personally been in these cafè and I appreciated the vibes.
+tiTrovo.casa is a free service that assists you in searching for a house to buy or rent in Italy.

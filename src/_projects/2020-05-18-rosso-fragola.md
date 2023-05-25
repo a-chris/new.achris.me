@@ -15,4 +15,4 @@ technologies:
   - Javascript
 ---
 
-Lofi Cafè is a selection of the best cafè in which you can study, work or just read a good book! I've personally been in these cafè and I appreciated the vibes.
+I collected a few thousands of the most common italian cooking recipes to find something new to cook. As of today the database counts 1k of ingredients and 20k of different combinations.
