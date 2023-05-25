@@ -1,0 +1,74 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.metadata.myvariable }}.
+
+title: Your awesome title
+tagline: This site is totally awesome
+email: your-email@example.com
+description: >-
+  Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+
+contacts:
+  - url: https://github.com/a-chris
+    name: GitHub
+  - url: https://www.linkedin.com/in/a-chris
+    name: Linkedin
+  - url: https://medium.com/@a.christian.toscano
+    name: Medium
+  - url: https://twitter.com/a_chris15
+    name: Twitter
+  - url: https://achris.me/rss.xml
+    name: RSS
+
+timeline:
+  - title: tiTrovo.casa
+    period: May 2022
+    url: https://titrovo.casa
+    description:
+    - Web application & Telegram Bot (Ruby on Rails)
+  - title: Extendi
+    url: https://www.extendi.it
+    period: March 2021 - current
+    description:
+    - Team leader
+    - Backend Developer (Ruby, Ruby on Rails)
+  - title: Extendi
+    url: https://www.extendi.it
+    period: March 2021 - current
+    description:
+    - Full Stack Developer (React, NodeJS)
+  - title: Mango Mobile Solutions
+    url: https://www.mangomobi.com
+    period: April 2019 - October 2020
+    description:
+    - Full Stack Developer (React, Spring MVC)
+    - Android Developer
+    - DevOps
+
+skills:
+  - title: backend
+    description: >-
+      I have experience in building both REST and GraphQL APIs. I've worked with Spring, Ktor and Vert.x in Java and Kotlin. ExpressJS and NextJS using both Javascript and Typescript. In the last two years I've been working with Ruby on Rails and I'm loving it so far.
+    image: backend.webp
+  - title: frontend
+    description: >-
+      I've built several web applications using React e NextJS in form of Single Page Application and Server Side Rendered for both my jobs and my personal projects. Even this website is built with NextJS.
+    image: website.webp
+  - title: data
+    description: >-
+      All non-trivial projects need to store and manage data. I've worked with SQL-based databases such as MySQL, MariaDB, SQLite and NoSQL databases such as MongoDB, Neo4J, CouchDB, Redis
+    image: database.webp
+  - title: automation
+    description: >-
+      One of my biggest interests. I like scripting and automation. I've built several Telegram Bots, servers with background jobs, scripts for repetitive tasks and solutions for home automation. Lastly I started working on Continuous Delivery, Continuous Integration and building my own Docker images.
+    image: automation.webp
+
+languages:
+  - Ruby
+  - Kotlin
+  - Java
+  - Javascript
+  - Typescript
+  - Python
