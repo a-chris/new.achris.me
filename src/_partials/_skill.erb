@@ -1,5 +1,10 @@
-<article style="display:flex;flex-direction:column;align-items:center;margin:0;">
+<article class="skill-container">
   <img src="/images/intro/<%= skill['image'] %>" style="max-width:250px;width:100%;"/>
   <h3><%= skill['title'].upcase %></h3>
-  <p style="margin:0;text-align:center;"><%= skill['description'] %></p>
+  <% skill['list'].each do |s| %>
+    <div style="width:100%;">
+      <span><%= s['name'] %></span>
+      <progress value="<%= s['num'] %>" max="100"></progress>
+    </div>
+  <% end %>
 </article>

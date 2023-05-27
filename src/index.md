@@ -1,9 +1,8 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 
-layout: default
+layout: intro
 ---
-
 
 Hi everyone! I'm Christian, a 26-year-old software developer from Italy. I'm very curious and passionate about everything related to computers and technology. I love staying up to date and explore new technologies in order to build a skillset that allows me to solve any type of problem.
 
@@ -27,7 +26,7 @@ I'm available for collaborations and small projects. Feel free to reach out to m
 </div>
 
 ### Skills
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(450px, 1fr));grid-gap:2em;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px, 1fr));grid-gap:2em;">
   <% site.metadata.skills.each do |skill| %>
     <%= render 'skill', skill: %>
   <% end %>

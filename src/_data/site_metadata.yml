@@ -49,21 +49,53 @@ timeline:
 
 skills:
   - title: backend
-    description: >-
-      I have experience in building both REST and GraphQL APIs. I've worked with Spring, Ktor and Vert.x in Java and Kotlin. ExpressJS and NextJS using both Javascript and Typescript. In the last two years I've been working with Ruby on Rails and I'm loving it so far.
     image: backend.webp
+    list:
+      - name: REST
+        num: 90
+      - name: GraphQL
+        num: 90
+      - name: Ruby on Rails
+        num: 100
+      - name: ExpressJS
+        num: 80
+      - name: Spring
+        num: 70
   - title: frontend
-    description: >-
-      I've built several web applications using React e NextJS in form of Single Page Application and Server Side Rendered for both my jobs and my personal projects. Even this website is built with NextJS.
     image: website.webp
+    list:
+    - name: React
+      num: 90
+    - name: NextJS
+      num: 90
   - title: data
-    description: >-
-      All non-trivial projects need to store and manage data. I've worked with SQL-based databases such as MySQL, MariaDB, SQLite and NoSQL databases such as MongoDB, Neo4J, CouchDB, Redis
     image: database.webp
+    list:
+    - name: Redis
+      num: 90
+    - name: MySQL/MariaDB
+      num: 90
+    - name: SQlite
+      num: 80
+    - name: PostgreSQL
+      num: 70
+    - name: MongoDB
+      num: 70
+    - name: Neo4J
+      num: 60
   - title: automation
-    description: >-
-      One of my biggest interests. I like scripting and automation. I've built several Telegram Bots, servers with background jobs, scripts for repetitive tasks and solutions for home automation. Lastly I started working on Continuous Delivery, Continuous Integration and building my own Docker images.
     image: automation.webp
+    list:
+    - name: Docker
+      num: 90
+    - name: Scripting
+      num: 90
+    - name: Telegram Bot
+      num: 90
+    - name: Continuous Delivery
+      num: 80
+    - name: Continuous Integration
+      num: 80
 
 languages:
   - Ruby

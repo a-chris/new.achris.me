@@ -11,7 +11,6 @@
 }
 
 body {
-  color: var(--body-color);
   font-family: 'Raleway', -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
@@ -159,12 +158,22 @@ hr {
 
 article {
   margin: 0;
+  padding: 1em;
 }
 
 h1,h2,h3 {
   text-align: center;
 }
 
+div.intro {
+  .skill-container {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:0;
+    border-radius: 24px;
+  }
+}
 // Timeline
 .timeline {
   position: relative;
@@ -200,7 +209,7 @@ h1,h2,h3 {
     right: -10px;
     background-color: var(--body-color);
     border: 3px solid var(--color);
-    top: 15px;
+    top: 25px;
     border-radius: 50%;
     z-index: 1;
   }
@@ -236,20 +245,29 @@ h1,h2,h3 {
     padding: 10px;
     background-color: white;
     border-radius: 6px;
-    text-align:center;
+    text-align: center;
     margin-left: auto;
     max-width: 300px;
+
+    span {
+      color: var(--body-color) !important;
+    }
   }
 
   /* The actual content */
   .content {
-    padding: 2vw;
+    padding: 10px;
     background-color: white;
     position: relative;
     border-radius: 6px;
 
     p {
       color: var(--body-color) !important;
+      margin-bottom: 5px;
+
+      .description {
+        font-size: 90%;
+      }
     }
   }
 
@@ -263,24 +281,16 @@ h1,h2,h3 {
   /* Full-width containers */
     .container {
       width: 100%;
-      padding-left: 70px;
+      padding-left: 30px;
       padding-right: 25px;
     }
 
   /* Make sure that all arrows are pointing leftwards */
     .container::before {
-      left: 60px;
+      left: 22px;
       border: medium solid white;
       border-width: 10px 10px 10px 0;
       border-color: transparent white transparent transparent;
-    }
-  }
-
-  p {
-    margin-bottom: 5px;
-
-    .description {
-      font-size: 90%;
     }
   }
 }
