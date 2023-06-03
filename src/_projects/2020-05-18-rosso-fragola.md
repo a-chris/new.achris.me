@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: Rosso Fragola
 date: 2023-05-14 13:08:42 +0200
 image: /images/projects/rf.webp

@@ -2,9 +2,11 @@
 layout: default
 ---
 
-<div style="text-align:center;">
-  <img src="<%= data.image %>" />
-</div>
-<h1><%= data.title %></h1>
+<div class="project-page">
+  <div>
+    <img src="<%= data.image %>" />
+  </div>
+  <h1><%= data.title %></h1>
 
-<%= yield %>
+  <%= yield %>
+</div>

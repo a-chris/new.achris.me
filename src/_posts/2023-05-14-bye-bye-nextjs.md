@@ -47,8 +47,8 @@ The SEO score is one of the main reasons people choose NextJS, and that was my r
 
 These are the stats from Vercel:
 
-![Vercel Score](bye_bye_nextjs/vercel_score.png)
-
+![Vercel Score](/images/blog/bye-bye-nextjs/vercel_score.png)
+{:.full-width}
 ## Deploying on Vercel
 
 From what I understand, deploying a NextJS website on Vercel optimizes caching, providing similar results to a CDN. While I expected it to be fast, that wasn't always the case. I found my website took more than 2 seconds to load on a cold start, after it wasn't loaded for several hours.

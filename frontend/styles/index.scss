@@ -6,6 +6,7 @@
   --body-color: #444;
   --heading-color: black;
   --action-color: #ffb088;
+  --muted-border-color: var(--action-color); // used by hr
   --block-spacing-vertical: 8em;
   --code-color: black !important;
 }
@@ -141,18 +142,37 @@ main {
 }
 
 .post-page {
+  max-width: 1100px;
+  margin: auto;
+
   h1, h2, h3, h4, h5, h6 {
     font-family:'Merriweather';
     margin-bottom: 1rem;
+  }
+  p:has(img) {
+    text-align: center; // centering images
+  }
+  img {
+    max-width: 600px;
+  }
+  p.full-width img {
+    max-width: 100%;
+  }
+
+}
+
+.project-page {
+  text-align: center;
+  img {
+    max-width: 800px;
   }
 }
 
 footer {}
 
 hr {
-  border: none;
-  border-top: 2px dotted #bbb;
-  margin: 3rem 0;
+  margin: 3rem auto;
+  max-width: 500px;
 }
 
 
