@@ -15,7 +15,6 @@ body {
   font-family: 'Raleway', -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
-  font-size: 110%;
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -25,6 +24,7 @@ nav {
   background-color: var(--black-light);
   justify-content: center !important;
   font-family: 'Raleway';
+  height: 60px;
 
   ul {
     gap: 4em !important;
@@ -36,12 +36,13 @@ nav {
       gap: 2em !important;
     }
     @media (max-width: 500px) {
-      gap: 1em !important;
+      gap: 1.5em !important;
     }
   }
   li {
     width: 125px;
     text-align:center;
+    padding: 5px;
 
     @media (max-width: 500px) {
       width: auto;
@@ -50,6 +51,7 @@ nav {
   a {
     font-weight: 400;
     color: white;
+    font-size: 23px !important;
   }
   .current-page {
     text-decoration: underline;
@@ -126,17 +128,17 @@ main {
     aspect-ratio: 5/3;
     object-fit: cover;
     height: 100%;
-    width: 300px;
+    width: 200px;
     border-radius: 4px;
 
     @media (max-width: 1200px) {
-      width: 250px;
-    }
-    @media (max-width: 800px) {
       width: 200px;
     }
+    @media (max-width: 800px) {
+      width: 150px;
+    }
     @media (max-width: 500px) {
-      width: 120px;
+      width: 70px;
     }
   }
 }
