@@ -4,13 +4,13 @@
 layout: intro
 ---
 
-Hi everyone! I'm Christian, a 26-year-old software developer from Italy. I'm very curious and passionate about everything related to computers and technology. I love staying up to date and explore new technologies in order to build a skillset that allows me to solve any type of problem.
+I'm a passionate software developer, I enjoy staying up-to-date with technology and explore new ways to solve problems. During my years of experience I had the opportunity work on every aspect of software development: monolith and microservices, data-intensive applications, millions of background jobs and CI/CD solutions.
 
-I believe that by sharing our experiences, we can all move faster and achieve greater success in both our personal and professional lives. That's why I'm the one who writes the project documentation, even if nobody has asked for it. In my opinion, even a small hint can save a collegue hours of struggling. Sometimes I write blog posts when I feel I have something worth sharing.
+My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems independently.
 
-One of my biggest interests is automating boring stuff as I believe that we created computers to make our lives easier, not the other way around.
+I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal.
 
-I'm available for collaborations and small projects. Feel free to reach out to me on Mastodon or Twitter.
+I'm available for small projects and collaboration, don't esitate to reach to me.
 
 ### My Journey
 <%= render 'timeline', timeline: site.metadata.timeline %>
