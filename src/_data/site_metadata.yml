@@ -31,20 +31,23 @@ timeline:
     url: https://www.extendi.it
     period: March 2021 - current
     description:
-    - Team leader
+    - Team leader & coordinator
     - Backend Developer (Ruby, Ruby on Rails)
-  - title: Extendi
-    url: https://www.extendi.it
-    period: March 2021 - current
+    - AWS
+  - title: Lab51
+    period: October 2020 - March 2021
     description:
     - Full Stack Developer (React, NodeJS)
   - title: Mango Mobile Solutions
-    url: https://www.mangomobi.com
-    period: April 2019 - October 2020
+    period: March 2019 - October 2020
     description:
     - Full Stack Developer (React, Spring MVC)
     - Android Developer
     - DevOps
+  - title: Bachelor Degree in Engineering & Computer Science
+    period: March 2019
+    description:
+    - University of Bologna
 
 skills:
   - title: backend
