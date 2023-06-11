@@ -40,3 +40,6 @@ collections:
     permalink: simple
     sort_by: order
     sort_direction: descending
+
+rougify:
+  theme: 'base16.dark'

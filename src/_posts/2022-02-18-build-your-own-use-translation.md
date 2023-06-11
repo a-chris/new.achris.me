@@ -25,7 +25,7 @@ This is the expected behavior:
 - `mywebsite.com/it`  => italian translations
 
 In Next.js we have the `next.config.js` file, that should be something like:
-```
+```javascript
 const nextConfig = {
   reactStrictMode: true,
 }
@@ -35,7 +35,7 @@ module.exports = nextConfig
 
 now, with the `it` and `en` locales it becomes
 
-```
+```javascript
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
@@ -65,14 +65,14 @@ next.config.js/
 
 as you can guess, the `it.js` file is going to contain all the italian translations and `en.js` the english ones.
 
-```
+```javascript
 // it.js
 module.exports = {
   WELCOME_MSG: "Benvenuto nel mio sito web!"
 }
 ```
 
-```
+```javascript
 // en.js
 module.exports = {
   WELCOME_MSG: "Welcome to my website!"
@@ -83,7 +83,7 @@ Of course, you can use JSON files instead of Javascript to store the translation
 ## Create the useTranslation hook
 Now it's time to create our custom React hook to use these translations.
 Create the `hooks` folder into the root of the project and the file `useTranslation.jsx`
-```
+```javascript
 // hooks/useTranslation.jsx
 
 import { useRouter } from "next/router";
@@ -108,23 +108,23 @@ and that's all, this is the hardest part you will see in this tutorial!
 If you have already used React hooks you already know what's going on, otherwise, let me explain.
 
 As you can see, we are importing the italian and english translation files and we store them into the `TRANSLATIONS` constant.
-```
+```javascript
 import en from "../public/static/locales/en";
 import it from "../public/static/locales/it";
 
 const TRANSLATIONS = { en, it };
 ```
 We need to detect the current locale of the user and to do this we use the Next.js router, imported from `next/router`. The `locale` constant contains the current locale which can be `it` or `en`.
-```
+```javascript
 const router = useRouter();
 const { locale, asPath } = router;
 ```
 The function `setLocale` just changes the locale of the URL with the given one by using the Next.js router, this means that `setLocale("it")` navigates the user to `mywebsite.com/it` and switches all the website to italian.
-```
+```javascript
 const setLocale = (locale) => router.push(asPath, asPath, { locale });
 ```
 Now the core idea of this useTranslation hooks is the `t` function: it receives a key and access the TRANSLATIONS object using that key and the current locale.
-```
+```javascript
 const t = (keyString) => TRANSLATIONS[locale][keyString];
 ```
 
@@ -133,7 +133,7 @@ so, if the current locale is `en` and we pass the key `WELCOME_MSG` it will do `
 ## How to use the hook
 
 Finally, to display the `WELCOME_MSG` text we can just write:
-```
+```javascript
 export default function Home() {
   const { t } = useTranslation()
 
@@ -154,7 +154,7 @@ Now if you change the user changes the localization of the website this text wil
 
 There's some space for optimization, for example we can use React `useCallback` hook to wrap the inner useTranslation functions so they will not re-render if nothing changes.
 
-```
+```javascript
 // hooks/useTranslation.jsx
 
 import { useRouter } from "next/router";
@@ -199,14 +199,14 @@ module.exports = {
 }
 ```
 
-```
+```javascript
 // en.js
 module.exports = {
   WELCOME_MSG_COLORED: <h2 style={{ color: 'green' }}>Welcome to my personal website!</h2>
 };
 ```
 and then we can use the `t` like this:
-```
+```javascript
 export default function Home() {
   const { t } = useTranslation()
 

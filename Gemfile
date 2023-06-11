@@ -37,3 +37,5 @@ gem "bridgetown-seo-tag", "~> 6.0"
 gem "bridgetown-sitemap", "~> 2.0"
 
 gem "byebug", "~> 11.1"
+
+gem "bridgetown-rougify", "~> 0.1.0", :group => :bridgetown_plugins
