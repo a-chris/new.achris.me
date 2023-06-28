@@ -10,7 +10,7 @@ My reliability makes me a point of reference for both teams and business as I am
 
 I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal.
 
-I'm available for small projects and collaboration, don't esitate to reach to me.
+Don't esitate to reach to me available for small projects and collaborations.
 
 ### My Journey
 <%= render 'timeline', timeline: site.metadata.timeline %>
