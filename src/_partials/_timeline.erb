@@ -1,19 +1,26 @@
 <div class="timeline">
   <% timeline.each do |t| %>
-  <div style="display:flex;">
-    <div class="container left">
-      <div class="period">
-        <span><%= t.period %></span>
+    <div style="display:flex;">
+      <div class="container left">
+        <div class="period">
+          <span><%= t.period %></span>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <% if t.url.present? %>
+            <a style="font-weight:bold;" href="<%= t.url %>">
+              <%= t.title %>
+              <img src="/images/common/link.svg" style="width:15px;margin-bottom:3px;" />
+            </a>
+          <% else %>
+            <p style="font-weight:bold;"><%= t.title %></p>
+          <% end %>
+          <% t.description.each do |d| %>
+            <p style="font-size:83%;"><%= d %></p>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="container right">
-      <div class="content">
-        <p style="font-weight:bold;"><%= t.title %></p>
-        <% t.description.each do |d| %>
-          <p style="font-size:83%;"><%= d %></p>
-        <% end %>
-      </div>
-    </div>
-  </div>
   <% end %>
 </div>
