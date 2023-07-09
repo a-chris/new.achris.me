@@ -1,3 +1,6 @@
+@import "colors";
+@import "components";
+
 :root:not([data-theme=dark]) {
   --black-almost: #11191f;
   --black-light: #2d2d2d;
@@ -54,7 +57,6 @@ nav {
   a {
     font-weight: 400;
     color: white;
-    font-size: 23px !important;
   }
   .current-page {
     text-decoration: underline;
@@ -85,7 +87,7 @@ body > nav ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -110,16 +112,33 @@ main {
 // Projects
 
 .project-article {
-  padding: 1.5em;
   margin: 0;
+  padding: 0;
   margin-bottom: 1.5em;
+
+  header, footer {
+    margin: 0;
+    padding: 0;
+  }
+
+  footer {
+    padding-top: 1em;
+    background-color: var(--background-color);
+  }
+
+  img {
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
 }
 
 // Posts
 
-.post-article, .project-article {
+.post-article {
   display: flex;
-  padding: 2vw;
+  padding: 1vw;
   margin: 0;
   margin-bottom: 1.5em;
 
@@ -198,6 +217,13 @@ code {
 }
 
 div.intro {
+  & > p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    text-align: justify;
+  }
+
   .skill-container {
     display:flex;
     flex-direction:column;

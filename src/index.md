@@ -8,7 +8,7 @@ I'm a passionate software developer, I enjoy staying up-to-date with technology 
 
 My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems independently.
 
-I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal.
+I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal!
 
 Don't esitate to reach to me available for small projects and collaborations.
 
@@ -26,7 +26,7 @@ Don't esitate to reach to me available for small projects and collaborations.
 </div>
 
 ### Skills
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px, 1fr));grid-gap:2em;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px, 1fr));grid-gap:2em;">
   <% site.metadata.skills.each do |skill| %>
     <%= render 'skill', skill: %>
   <% end %>
