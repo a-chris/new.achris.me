@@ -1,0 +1,34 @@
+.post-article {
+  display: flex;
+  padding: 1vw;
+  margin: 0;
+  margin-bottom: 1.5em;
+
+  & > div {
+    padding-left: 1em;
+  }
+
+  a {
+    // this is the title of the post/project
+    font-size: 115%;
+    font-weight: bold;
+  }
+
+  img {
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    height: 100%;
+    width: 200px;
+    border-radius: 4px;
+
+    @media (max-width: 1200px) {
+      width: 200px;
+    }
+    @media (max-width: 800px) {
+      width: 150px;
+    }
+    @media (max-width: 500px) {
+      width: 70px;
+    }
+  }
+}

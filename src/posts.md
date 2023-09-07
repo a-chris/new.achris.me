@@ -6,7 +6,7 @@ title: Posts
 <% collections.posts.resources.each do |post| %>
   <article class="post-article">
     <img src="<%= post.data.image %>">
-    <div style="padding-left: 1em;">
+    <div>
       <a href="<%= post.relative_url %>" style="font-family:'Merriweather';">
         <%= post.data.title %>
       </a>

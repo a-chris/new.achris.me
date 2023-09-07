@@ -4,11 +4,14 @@
 @import "components/body.scss";
 @import "components/timeline.scss";
 @import "components/project.scss";
+@import "components/post.scss";
 
 :root:not([data-theme=dark]) {
   --black-almost: #11191f;
   --black-light: #2d2d2d;
   --white-almost: #f2f2f2;
+  --gray-light: #d3d3d3;
+  --gray-lighter: #f4f4f4;
   --orange-pink: #ffb088;
 
   // --body-background: floralwhite;
@@ -18,39 +21,6 @@
   --muted-border-color: var(--action-color); // used by hr
   --block-spacing-vertical: 8em;
   --code-color: black !important;
-}
-
-// Posts
-
-.post-article {
-  display: flex;
-  padding: 1vw;
-  margin: 0;
-  margin-bottom: 1.5em;
-
-  a {
-    // this is the title of the post/project
-    font-size: 115%;
-    font-weight: bold;
-  }
-
-  img {
-    aspect-ratio: 5/3;
-    object-fit: cover;
-    height: 100%;
-    width: 200px;
-    border-radius: 4px;
-
-    @media (max-width: 1200px) {
-      width: 200px;
-    }
-    @media (max-width: 800px) {
-      width: 150px;
-    }
-    @media (max-width: 500px) {
-      width: 70px;
-    }
-  }
 }
 
 .post-page {

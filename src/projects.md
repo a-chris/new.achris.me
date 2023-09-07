@@ -10,11 +10,12 @@ title: Projects
         <img src="<%= project.data.image %>">
       </header>
       <footer>
-        <div style="padding-left: 1em;">
-          <a href="<%= project.relative_url %>" style="font-family:'Merriweather';"><%= project.data.title %></a>
-          <p><%= project.data.description %></p>
-          <p><%= project.data.technologies.join(', ') %></p>
-        </div>
+        <a href="<%= project.relative_url %>" style="font-family:'Merriweather';"><%= project.data.title %></a>
+        <br/>
+        <% project.data.technologies.map do |tech| %>
+          <span class="tag"><%= tech %></span>
+        <% end %>
+        <p><%= project.data.description %></p>
       </footer>
     </article>
   <% end %>
