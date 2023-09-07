@@ -1,0 +1,22 @@
+.project-article {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5em;
+
+  header, footer {
+    margin: 0;
+    padding: 0;
+  }
+
+  footer {
+    padding-top: 1em;
+    background-color: var(--background-color);
+  }
+
+  img {
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+}
