@@ -6,7 +6,7 @@ layout: intro
 
 I'm a passionate software developer, I enjoy staying up-to-date with technology and explore new ways to solve problems. During my years of experience I had the opportunity work on every aspect of software development: monolith and microservices, data-intensive applications, millions of background jobs and CI/CD solutions.
 
-My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems independently.
+My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems autonomously.
 
 I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal!
 
