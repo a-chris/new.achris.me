@@ -3,10 +3,19 @@ layout: default
 ---
 
 <div class="project-page">
-  <div>
-    <img src="<%= data.image %>" />
+  <h1 style="margin:0;"><%= data.title %></h1>
+  <div style="margin-bottom: 2em;">
+    <% data.technologies.map do |tech| %>
+      <span class="tag"><%= tech %></span>
+    <% end %>
   </div>
-  <h1><%= data.title %></h1>
+  <hr/>
 
-  <%= yield %>
+  <section>
+    <img src="<%= data.image %>" />
+  </section>
+
+  <section>
+    <%= yield %>
+  </section>
 </div>

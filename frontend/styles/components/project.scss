@@ -1,3 +1,19 @@
+.project-page {
+  text-align: center;
+
+  img {
+    max-width: 800px;
+  }
+
+  .tag {
+    font-size: smaller;
+    background-color: var(--gray-lighter);
+    padding: 0.2em 0.6em;
+    border-radius: 100px;
+    margin-bottom: 1px;
+  }
+}
+
 .project-article {
   margin: 0;
   padding: 0;
