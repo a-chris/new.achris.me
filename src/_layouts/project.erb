@@ -24,14 +24,14 @@ layout: default
     <% end %>
   </div>
 
-  <div style="margin-bottom: 2em;">
+  <div class="project-tags">
     <% data.technologies.map do |tech| %>
       <span class="tag"><%= tech %></span>
     <% end %>
   </div>
 
   <% if data.image %>
-    <section>
+    <section class="project-land-section">
       <img src="<%= data.image %>" />
     </section>
   <% end %>

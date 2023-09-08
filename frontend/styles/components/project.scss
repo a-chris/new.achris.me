@@ -1,20 +1,27 @@
 .project-page {
-  text-align: center;
+  text-align: left;
 
   img {
     max-width: 800px;
   }
 
-  pre,code {
-    text-align: left;
-  }
-
   .project-links {
+    text-align: center;
     margin-bottom: 5px;
   }
 
   .project-title {
+    text-align: center;
     letter-spacing: -1px;
+  }
+
+  .project-tags {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  .project-land-section {
+    text-align: center;
   }
 
   .tag {
@@ -23,6 +30,10 @@
     padding: 0.2em 0.6em;
     border-radius: 100px;
     margin-bottom: 1px;
+  }
+
+  pre,code {
+    text-align: left;
   }
 }
 

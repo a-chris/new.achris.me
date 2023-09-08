@@ -11,6 +11,22 @@ technologies:
   - Kotlin
 ---
 
-Android application to freely read medium.com articles that works by emulating the browser anonymous navigation.
+Medium No Thanks is an small Android application that allows you to read any Medium article bypassing the paywall. Under the hood it is just using an Android WebView to render the Medium page.
 
-Sadly, the anoynmous navigation trick has been deprecated by Medium, so the application is not working anymore.
+<aside class="callout">
+😔 Sadly, the anoynmous navigation trick has been deprecated by Medium, so the application is not working anymore.
+</aside>
+
+
+## How it works
+
+Find an article with paywall, click to share the article and select **Medium No Thanks** from the sharesheet.
+
+## Extra features
+
+- Dark mode friendly (only for Android 10 and greater)
+- Keeping a list of read posts
+
+## What you can't do using this app
+
+* You won't be able to clap or comment any post, you can only read the article.
