@@ -6,8 +6,15 @@
 @import "components/project.scss";
 @import "components/post.scss";
 
+@font-face {
+  font-family: "CommitMono";
+  font-weight: regular;
+  src: url("/fonts/CommitMono.otf") format("opentype");
+}
+
 :root {
-  // override spacing, etc..
+  --font-family: "CommitMono";
+  --font-size: 19px;
 }
 
 :root:not([data-theme=dark]) {
@@ -27,26 +34,6 @@
   --code-color: black !important;
 }
 
-.post-page {
-  max-width: 1100px;
-  margin: auto;
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family:'Merriweather';
-    margin-bottom: 1rem;
-  }
-  p:has(img) {
-    text-align: center; // centering images
-  }
-  img {
-    max-width: 600px;
-  }
-  p.full-width img {
-    max-width: 100%;
-  }
-
-}
-
 hr {
   margin: 1rem auto;
   max-width: 500px;
@@ -63,7 +50,7 @@ h1,h2,h3 {
 }
 
 code {
-  font-size: 85% !important;
+  font-size: 90% !important;
   padding: 0.2rem 0.2rem !important;
 }
 

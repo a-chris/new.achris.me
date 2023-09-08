@@ -13,7 +13,7 @@ title: Projects
       </header>
       <footer>
         <div class="title-container">
-          <a href="<%= project.relative_url %>" style="font-family:'Merriweather';">
+          <a class="project-title" href="<%= project.relative_url %>">
             <%= project.data.title %>
           </a>
           <% if project.data.website %>

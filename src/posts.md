@@ -7,7 +7,7 @@ title: Posts
   <article class="post-article">
     <img src="<%= post.data.image %>">
     <div>
-      <a href="<%= post.relative_url %>" style="font-family:'Merriweather';">
+      <a class="post-title" href="<%= post.relative_url %>">
         <%= post.data.title %>
       </a>
       <p><%= post.data.description %></p>

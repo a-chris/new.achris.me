@@ -1,3 +1,25 @@
+.post-page {
+  max-width: 1100px;
+  margin: auto;
+
+  h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+  }
+  p:has(img) {
+    text-align: center; // centering images
+  }
+  img {
+    max-width: 600px;
+  }
+  p.full-width img {
+    max-width: 100%;
+  }
+
+  .post-title {
+    letter-spacing: -1px;
+  }
+}
+
 .post-article {
   display: flex;
   padding: 1vw;
@@ -8,9 +30,13 @@
     padding-left: 1em;
   }
 
+  .post-title {
+    letter-spacing: -1px;
+  }
+
   a {
     // this is the title of the post/project
-    font-size: 115%;
+    font-size: 110%;
     font-weight: bold;
   }
 
