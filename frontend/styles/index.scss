@@ -6,6 +6,10 @@
 @import "components/project.scss";
 @import "components/post.scss";
 
+:root {
+  // override spacing, etc..
+}
+
 :root:not([data-theme=dark]) {
   --black-almost: #11191f;
   --black-light: #2d2d2d;
@@ -44,7 +48,7 @@
 }
 
 hr {
-  margin: 3rem auto;
+  margin: 1rem auto;
   max-width: 500px;
 }
 

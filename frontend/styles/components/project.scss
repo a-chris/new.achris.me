@@ -5,6 +5,14 @@
     max-width: 800px;
   }
 
+  pre,code {
+    text-align: left;
+  }
+
+  .project-links {
+    margin-bottom: 5px;
+  }
+
   .tag {
     font-size: smaller;
     background-color: var(--gray-lighter);
@@ -30,11 +38,14 @@
     background-color: var(--background-color);
   }
 
-  img {
-    aspect-ratio: 5/3;
-    object-fit: cover;
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+  header {
+    img {
+      // main image of the element
+      aspect-ratio: 5/3;
+      object-fit: cover;
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
   }
 
   .tag {

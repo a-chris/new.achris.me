@@ -21,7 +21,7 @@ contacts:
 
 timeline:
   - title: tiTrovo.casa
-    period: May 2022
+    period: May 2022 - current
     url: https://titrovo.casa
     description:
     - Web application & Telegram Bot (Ruby on Rails)

@@ -2,18 +2,39 @@
 layout: default
 ---
 
+<hr/>
+
 <div class="project-page">
-  <h1 style="margin:0;"><%= data.title %></h1>
+  <h1 style="margin:0;">
+    <%= data.title %>
+  </h1>
+
+  <div class="project-links">
+    <% if data.website %>
+      <a href="<%= data.website %>">
+        website
+        <img src="/images/common/link.svg" style="width:20px;margin:0 0 3px 8px;" />
+      </a>
+    <% end %>
+    <% if data.github %>
+      <a href="<%= data.github %>">
+        GitHub
+        <img src="/images/contacts/github.svg" style="width:20px;margin:0 0 3px 8px;" />
+      </a>
+    <% end %>
+  </div>
+
   <div style="margin-bottom: 2em;">
     <% data.technologies.map do |tech| %>
       <span class="tag"><%= tech %></span>
     <% end %>
   </div>
-  <hr/>
 
-  <section>
-    <img src="<%= data.image %>" />
-  </section>
+  <% if data.image %>
+    <section>
+      <img src="<%= data.image %>" />
+    </section>
+  <% end %>
 
   <section>
     <%= yield %>
