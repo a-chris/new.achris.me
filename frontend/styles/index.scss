@@ -1,11 +1,11 @@
 @import "colors";
-@import "components";
 
-@import "components/body.scss";
-@import "components/timeline.scss";
-@import "components/project.scss";
-@import "components/post.scss";
-@import "components/callout.scss";
+@import "components/body";
+@import "components/timeline";
+@import "components/project";
+@import "components/post";
+@import "components/callout";
+@import "components/grid";
 
 @font-face {
   font-family: "CommitMono";
@@ -16,6 +16,7 @@
 :root {
   --font-family: "CommitMono";
   --font-size: 19px;
+  --block-spacing-vertical: calc(var(--spacing) * 3) !important;
 }
 
 :root:not([data-theme=dark]) {
@@ -39,7 +40,6 @@ hr {
   margin: 1rem auto;
   max-width: 500px;
 }
-
 
 article {
   margin: 0;
@@ -70,4 +70,8 @@ div.intro {
     margin:0;
     border-radius: 16px;
   }
+}
+
+img {
+  width: 100%;
 }
