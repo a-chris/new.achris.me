@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Setup Ruby with Visual Studio Code - 2023 edition
+title:  Best Visual Studio Code extensions for Ruby and Rails
 date:   2023-04-19 13:08:42 +0200
 categories: posts
 image: /images/blog/ruby-vscode.webp
-description: Setup and best extensions to make Ruby and Ruby on Rails work with Visual Studio Code.
+description: The best Visual Studio Code extensions to work with Ruby and Ruby on Rails and bring several RubyMine features.
 ---
 
 It has been almost two years since I wrote this post, and I continue to use Ruby with Visual Studio Code on a daily basis. Let me share some of the extensions that save me a lot of time every day.
