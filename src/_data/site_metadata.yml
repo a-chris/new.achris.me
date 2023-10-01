@@ -26,24 +26,24 @@ timeline:
     description:
     - Web application & Telegram Bot (Ruby on Rails)
   - title: Extendi
-    period: March 2021 - current
+    period: Mar 2021 - current
     url: https://www.extendi.it
     description:
     - Team leader & coordinator
     - Backend Developer (Ruby, Ruby on Rails)
     - AWS
   - title: Lab51
-    period: October 2020 - March 2021
+    period: Oct 2020 - Mar 2021
     description:
     - Full Stack Developer (React, NodeJS)
   - title: Mango Mobile Solutions
-    period: March 2019 - October 2020
+    period: Mar 2019 - Oct 2020
     description:
     - Full Stack Developer (React, Spring MVC)
     - Android Developer
     - DevOps
   - title: Bachelor Degree in Engineering & Computer Science
-    period: March 2019
+    period: Mar 2019
     description:
     - University of Bologna
 

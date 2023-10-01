@@ -61,19 +61,19 @@ body {
     }
   }
 
-  & > main {
-    padding: 2em 8em !important;
+  // & > main {
+  //   padding: 2em 8em !important;
 
-    @media (max-width: 1200px) {
-      padding: 30px 3em !important;
-    }
-    @media (max-width: 800px) {
-      padding: 20px 1em !important;
-    }
-    @media (max-width: 500px) {
-      padding: 16px 8px !important;
-    }
-  }
+  //   @media (max-width: 1200px) {
+  //     padding: 30px 3em !important;
+  //   }
+  //   @media (max-width: 800px) {
+  //     padding: 20px 1em !important;
+  //   }
+  //   @media (max-width: 500px) {
+  //     padding: 16px 8px !important;
+  //   }
+  // }
 
   & > footer {
     text-align: center;

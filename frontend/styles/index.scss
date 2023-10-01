@@ -17,6 +17,8 @@
   --font-family: "CommitMono";
   --font-size: 19px;
   --block-spacing-vertical: calc(var(--spacing) * 3) !important;
+
+  --callout-color: var(--color);
 }
 
 :root:not([data-theme=dark]) {
@@ -34,6 +36,8 @@
   --muted-border-color: var(--action-color); // used by hr
   --block-spacing-vertical: 8em;
   --code-color: black !important;
+
+  --callout-color: var(--black-almost);
 }
 
 hr {
@@ -56,11 +60,11 @@ code {
 }
 
 div.intro {
-  & > p {
+  & > p, aside.callout {
     margin-left: auto;
     margin-right: auto;
     max-width: 900px;
-    text-align: justify;
+    text-align: center;
   }
 
   .skill-container {

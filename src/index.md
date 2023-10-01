@@ -2,23 +2,25 @@
 layout: intro
 ---
 
-I'm Christian, a passionate software developer from Italy, I enjoy staying up-to-date with technology and explore new ways to solve problems. During my years of experience I had the opportunity work on every aspect of software development: monolith and microservices, data-intensive applications, millions of background jobs and CI/CD solutions.
+<b>Ehi welcome to my website! I'm Christian,a software developer from Italy.</b>
 
-My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems autonomously.
-
-I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal!
+I enjoy staying up-to-date with technology and explore new ways to solve problems. I had the opportunity work on several aspect of software development: monolith and microservices, data-intensive applications, millions of background jobs, CI/CD solutions and static website generation (like this one!). My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems autonomously.
 
 Don't esitate to reach to me available for small projects and collaborations.
+
+<aside class="callout">
+  💡 I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal!
+</aside>
 
 ### My Journey
 <%= render 'timeline', timeline: site.metadata.timeline %>
 
 ### Languages
-<div style="display:flex;justify-content:space-evenly;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px, 1fr));grid-gap:1.2em;">
   <% site.metadata.languages.each do |l| %>
     <div style="text-align:center;">
       <img src="/images/languages/<%= l.downcase  %>.svg" style="width:50px;height:50px;">
-      <p><%= l %></p>
+      <p style="font-size:80%;"><%= l %></p>
     </div>
   <% end %>
 </div>
