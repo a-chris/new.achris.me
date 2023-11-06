@@ -16,6 +16,8 @@ contacts:
     name: Linkedin
   - url: https://medium.com/@a.christian.toscano
     name: Medium
+  - url: https://ruby.social/@achris
+    name: Mastodon
   - url: https://twitter.com/a_chris15
     name: Twitter
 

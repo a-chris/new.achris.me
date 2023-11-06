@@ -11,7 +11,7 @@
   <h1 style="margin:10px;">Christian Toscano</h1>
   <div style="background-color:white;width:fit-content;margin:auto;">
     <% @metadata.contacts.each do |c| %>
-      <a href="<%= c.url %>" style="padding:20px;">
+      <a href="<%= c.url %>" data-tooltip="<%= c.name %>" style="padding:20px;">
         <img src="/images/contacts/<%= c.name.downcase %>.svg" style="width:20px;" />
       </a>
     <% end %>
