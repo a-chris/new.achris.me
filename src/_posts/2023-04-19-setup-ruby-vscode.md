@@ -1,73 +1,27 @@
 ---
 layout: post
-title:  Best Visual Studio Code extensions for Ruby and Rails
+title:  Best VS Code extensions and settings for Ruby and Rails
 date:   2023-04-19 13:08:42 +0200
 categories: posts
 image: /images/blog/ruby-vscode.webp
-description: The best Visual Studio Code extensions to work with Ruby and Ruby on Rails and bring several RubyMine features.
+description: The best Visual Studio Code extensions and settings to work with Ruby and Ruby on Rails, bring several RubyMine features.
 ---
 
-It has been almost two years since I wrote this post, and I continue to use Ruby with Visual Studio Code on a daily basis. Let me share some of the extensions that save me a lot of time every day.
+I started using Ruby three years ago and Visual Studio Code has been my preferred IDE since day one. Coming from a Java background, I initially tried using RubyMine: it had several feature I was missing on VS Code but it was resource-expensive and I didn't like the UI (I know it has improved recently).
+
+**So I looked for the best VS Code extentions and settings to work with Ruby and Ruby (and Ruby on Rails) to also brings some of the RubyMine features I was missing.**
+
+I am currently using these extensions on both MacOS and Linux (Ubuntu/Fedora) but I'm confident that everything should work fine on Windows as well.
+
+Here are the extensions that save me a lot of time every day and make programming with Ruby ~~less painful~~ a pleasure! I will also share my JSON settings so that you can have everything running in 10 minutes 🚀
 
 ## Copy Ruby Reference
 
-First we go with [Copy Ruby Reference](https://marketplace.visualstudio.com/items?itemName=mickey.code-copy-ruby-ref), this is a mind blowing, time saver extension that add a new option in the right-click menù, called "copy Ruby reference" that allows to copy the whole name of a Ruby class even if it is made of multiple modules!
+First we go with [Copy Ruby Reference](https://marketplace.visualstudio.com/items?itemName=mickey.code-copy-ruby-ref), a mind blowing extension for Ruby developers, time saver extension that add a new option in the right-click menù, called "copy Ruby reference" that allows to copy the whole name of a Ruby class even if it is made of multiple modules!
 
 ![CopyRubyReference](/images/blog/vscode/ruby_reference.webp)
 
 So you will get `Strategies::Advertisement::Fetchers::Unnotified` in your clipboard, ready to be pasted and used in your code.
-
-## Ruby LSP
-
-![RubyLSP](/images/blog/vscode/ruby_lsp.webp)
-
-[Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp) is the new suggested extension to work with Ruby by the [VS Code docs](https://code.visualstudio.com/docs/languages/ruby). I must admit I was full of hope when I first went to install it but it was a bit delusional. Don't get me wrong, it must be hard to work with a magic language like Ruby but this extension is not ready to fully replace Solargraph.
-
-Pro:
-- Easy to install. It does it all by itself, no need to run `gem install solargraph` or whatever.
-- It also replaces **rubocop** as formatter if well configured
-- It can use **rbenv** by default with `"rubyLsp.rubyVersionManager": "rbenv"`
-- Faster than the old Ruby extension
-- Debugging and breakpoints out of the box, to be honest I did not test this feature since I'm a heady **byebug** user but it could be really appreciated if you come from RubyMine
-
-Cons:
-- I do not see any suggestion while writing code, like at all
-- The `Go to definition` also, `cmd+click`, sometimes do not work
-- Every time you change the **Gemfile.lock** a popup appears on the bottom-right of VS Code to update the gems/documentation/whatever_it_is_doing, it could be annoying if you have many gems and it slow down your machine
-
-So, it has its pros and is going to the right direction, this will probably be the future of Ruby on VS Code but at the moment it does not offer any life-changing feature while having some annoying downturns. It's up to you whether to use it or not, give it a chance and let me know what you think.
-
-# Ruby Interpolation Autocomplete
-
-![RubyInterpolationAutocomplete](/images/blog/vscode/ruby_int_compl.webp)
-
-[Ruby Interpolation Autocomplete](https://marketplace.visualstudio.com/items?itemName=ghbozz.hashtag) is a small but well-appreciated extention that automatically add the `#{}` when you first type `#` inside a Ruby string.
-
-This only work for strings with double apex `"` or backtick ```.
-
-# Sticky Scroll
-
-Finally, this is not a VS Code extension but a brand new feature of the editor. It makes the classname and method name to become sticky (stay on top) even while scrolling down, so we always know which method we are reading.
-
-![StickyScroll](/images/blog/vscode/sticky_scroll.webp)
-
-you can enable it by editing your JSON configuration with the following line:
-
-```json
-"editor.stickyScroll.enabled": true
-```
-
-or looking for "sticky" in the UI Settings.
-
-### Original Post
-
-A few months ago, in March, I began an exciting journey at Extendi as a Ruby backend developer. It was my first experience with Ruby, and I felt overwhelmed by the ecosystem and the codebase 😵.
-
-As a former Java developer, I was already used to IntelliJ, so I started using RubyMine as my preferred IDE for working in Ruby. It made dependency installation, project startup, and navigation between dependencies by clicking on the class name easy. RubyMine does half the work for you!
-
-Everything went well for 3-4 months, but then I started missing all the extensions and themes I had in VS Code. I also felt like RubyMine was sluggish compared to Visual Studio Code, especially on Linux. So, I decided to slowly transition to VS Code, but this time I dedicated a few hours to improve my Ruby workflow by setting it up properly. This is how I discovered a few interesting and not well-known extensions that are saving me so much time every day.
-
-In this article, I will discuss five really useful Visual Studio Code extensions for writing in Ruby. Some of them were not explicitly developed for Ruby, but they work well with it. Only one of these extensions is for Ruby on Rails. I am currently using these extensions on both MacOS and Linux (Ubuntu/Fedora), and I'm confident that everything should work fine on Windows as well. They are easy to set up, and I will share my current configuration so that you can have everything running in 10 minutes. Just follow me!
 
 ## Solargraph
 
@@ -97,11 +51,13 @@ and copy the result that in my case is `/home/chri/.rbenv/shims/solargraph` beca
 
 Open the **VS Code JSON Settings** and paste the following lines:
 ```
-"solargraph.commandPath": "<which_solargraph_result_here>",
+"solargraph.commandPath": "...",
 "solargraph.formatting": true
 ```
 
-### Solargraph tip
+where `commandPath` is the path you obtain by running `which solargraph`.
+
+### Solargraph tips
 
 Now that Solargraph is ready to work, open a terminal inside the folder of your Ruby project and run:
 
@@ -114,6 +70,36 @@ let it go, it may take a few minutes depending on your project size.
 This magic command makes Solargraph analyze your project and all of its gems to download all the needed documentation. This will make the intellisense and code suggestions much smarter because it allows VS Code to understand the variables and return types, methods definitions, etc.. that you are working with.
 
 You have to run this command in each one of your Ruby projects and you can run it periodically once you have installed new gems or made substantial changes to the project.
+
+## Ruby LSP
+
+![RubyLSP](/images/blog/vscode/ruby_lsp.webp)
+
+[Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp) is the new suggested extension to work with Ruby by the [VS Code docs](https://code.visualstudio.com/docs/languages/ruby). I must admit I was full of hope when I first went to install it but it was a bit delusional. Don't get me wrong, it must be hard to work with a magic language like Ruby but this extension is not ready to fully replace Solargraph.
+
+Pro:
+- Easy to install. It does it all by itself, no need to run `gem install solargraph` or whatever.
+- It also replaces **rubocop** as formatter if well configured
+- It can use **rbenv** by default with `"rubyLsp.rubyVersionManager": "rbenv"`
+- Faster than the old Ruby extension
+- Debugging and breakpoints out of the box, to be honest I did not test this feature since I'm a heady **byebug** user but it could be really appreciated if you come from RubyMine
+
+Cons:
+- I do not see any suggestion while writing code, like at all
+- The `Go to definition` also, `cmd+click`, sometimes do not work
+- Every time you change the **Gemfile.lock** a popup appears on the bottom-right of VS Code to update the gems/documentation/whatever_it_is_doing, it could be annoying if you have many gems and it slow down your machine
+
+So, it has its pros and is going to the right direction, this will probably be the future of Ruby on VS Code but at the moment it does not offer any life-changing feature while having some annoying downturns. It's up to you whether to use it or not, give it a chance and let me know what you think.
+
+# Ruby Interpolation Autocomplete
+
+![RubyInterpolationAutocomplete](/images/blog/vscode/ruby_int_compl.webp)
+
+[Ruby Interpolation Autocomplete](https://marketplace.visualstudio.com/items?itemName=ghbozz.hashtag) is a small but well-appreciated extention that automatically add the `#{}` when you first type `#` inside a Ruby string.
+
+This only work for strings with double apex `"` or backtick ```.
+
+or looking for "sticky" in the UI Settings.
 
 ## ColorTabs
 
@@ -214,3 +200,40 @@ render partial: 'contents/report_item'
 will open the `_report_item.html.erb` file.
 
 This extension requires no configuration however I noticed it conflicts with Solargraph sometimes so it leads to the definition of a method instead of the partial file. Anyway, I put it on the list because you may find it useful, depending on your project setup.
+
+# VS Code Settings
+
+## Sticky Scroll
+
+This is not a VS Code extension but a brand new feature of the editor. It makes the classname and method name to become sticky (stay on top) even while scrolling down, so we always know which method we are reading.
+
+![StickyScroll](/images/blog/vscode/sticky_scroll.webp)
+
+you can enable it by editing your JSON configuration with the following line:
+
+```json
+"editor.stickyScroll.enabled": true
+```
+
+## Emmet autocomplete
+
+Did you know that you can have Emmet autocomplete in `erb` files?
+No? Me too! It took me 3 years to find out. Now I'm regretting all the time I wasted so much time manually writingthe css elements and classes..
+
+Emmet declares dynamic snippets so that you can just write `.grid` and it will replaced by `<div class="grid"></div>`.
+But this happens only for HTML files, unless you tell Emmet that you want it to work with ERB too!
+
+Here's the line you should add to the JSON settings to make Emmet works with ERB files (or whatever format you are using)
+
+```json
+"emmet.includeLanguages": { "erb": "html", "ruby": "html" }
+```
+
+Emmet comes with VS Code, no need to install any particular extension.
+
+---
+
+That's all at the moment 🙂
+I periodically update this post when I discover new extentions or useful settings, for example the Sticky Scroll one has been added only in mid-2023!
+
+I hope you guys enjoyed this post, if you have any extension or setting fo suggest just reach out to me on Twitter or Mastodon I will be happy to give you the credits 🥰
