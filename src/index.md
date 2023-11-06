@@ -2,11 +2,11 @@
 layout: intro
 ---
 
-<b>Ehi welcome to my website! I'm Christian,a software developer from Italy.</b>
+<b>Ehi, welcome to my website! I'm Christian, a software developer from Italy.</b>
 
-I enjoy staying up-to-date with technology and explore new ways to solve problems. I had the opportunity work on several aspect of software development: monolith and microservices, data-intensive applications, millions of background jobs, CI/CD solutions and static website generation (like this one!). My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems autonomously.
+I'm a passioante software developer and I explore new ways to solve problems. I had the opportunity work on several aspect of software development: monolith and microservices, data-intensive applications, millions of background jobs, CI/CD solutions and static website generation (like this one!). My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems autonomously.
 
-Don't esitate to reach to me available for small projects and collaborations.
+Feel free to contact me for your next-big-thing project or just small collaborations.
 
 <aside class="callout">
   💡 I believe that technology is meant to make people's lives easier, and as developers, it's our responsibility to achieve this goal!
