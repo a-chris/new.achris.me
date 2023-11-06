@@ -21,7 +21,7 @@
   --callout-color: var(--color);
 }
 
-:root:not([data-theme=dark]) {
+:root:not([data-theme="dark"]) {
   --black-almost: #11191f;
   --black-light: #2d2d2d;
   --white-almost: #f2f2f2;
@@ -50,7 +50,9 @@ article {
   padding: 1em;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   text-align: center;
 }
 
@@ -60,7 +62,8 @@ code {
 }
 
 div.intro {
-  & > p, aside.callout {
+  & > p,
+  aside.callout {
     margin-left: auto;
     margin-right: auto;
     max-width: 900px;
@@ -68,10 +71,10 @@ div.intro {
   }
 
   .skill-container {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
     border-radius: 16px;
   }
 }
