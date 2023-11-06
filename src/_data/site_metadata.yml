@@ -26,7 +26,9 @@ timeline:
     period: May 2022 - current
     url: https://titrovo.casa
     description:
-    - Web application & Telegram Bot (Ruby on Rails)
+    - The easiest way to find a house to rent or buy in Italy!
+    - Web application & Telegram Bot
+    - Ruby on Rails
   - title: Extendi
     period: Mar 2021 - current
     url: https://www.extendi.it
