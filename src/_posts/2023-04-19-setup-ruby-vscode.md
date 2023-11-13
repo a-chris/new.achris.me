@@ -13,7 +13,7 @@ I started using Ruby three years ago and Visual Studio Code has been my preferre
 
 I am currently using these extensions on both MacOS and Linux (Ubuntu/Fedora) but I'm confident that everything should work fine on Windows as well.
 
-Here are the extensions that save me a lot of time every day and make programming with Ruby ~~less painful~~ a pleasure! I will also share my JSON settings so that you can have everything running in 10 minutes 🚀
+Here are the extensions that save me a lot of time every day and make programming with Ruby ~~less painful~~ a pleasure! I will also share my JSON settings so that you can have everything running in a few minutes 🚀
 
 ## Copy Ruby Reference
 
