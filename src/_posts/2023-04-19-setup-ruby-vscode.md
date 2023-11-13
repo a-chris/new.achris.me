@@ -99,8 +99,6 @@ So, it has its pros and is going to the right direction, this will probably be t
 
 This only work for strings with double apex `"` or backtick ```.
 
-or looking for "sticky" in the UI Settings.
-
 ## ColorTabs
 
 ![ColorTabs](/images/blog/vscode/color_tabs.webp)
@@ -188,6 +186,14 @@ gem install ripper-tags
 
 Now you can see the source code of a method by looking for its definition or you can open the full source code of an installed gem by running the `Bust-A-Gem: Open Gem...` command in Visual Studio Code.
 
+## Endwise
+
+![Endwise](/images/blog/vscode/endwise.png)
+
+[Endwise](https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise) is a very handy extention that automatically adds `end` when required, for example if you type a new line after declaring a method or a block.
+It requires zero configurations, just install it and it will works for Ruby files.
+
+
 ## Rails Open Partials
 
 ![Rails Open Partials](/images/blog/vscode/rails_open_partials.webp)
@@ -214,6 +220,8 @@ you can enable it by editing your JSON configuration with the following line:
 ```json
 "editor.stickyScroll.enabled": true
 ```
+
+or looking for "sticky" in the UI Settings.
 
 ## Emmet autocomplete
 

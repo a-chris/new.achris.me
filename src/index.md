@@ -4,7 +4,9 @@ layout: intro
 
 <b>Ehi, welcome to my website! I'm Christian, a software developer from Italy.</b>
 
-I'm a passionate software developer and I explore new ways to solve problems. I had the opportunity work on several aspect of software development: monolith and microservices, data-intensive applications, millions of background jobs, CI/CD solutions and static website generation (like this one!). My reliability makes me a point of reference for both teams and business as I am capable of collaborating with others but also solving problems autonomously.
+I'm a passionate software developer and I love working on side projects or side jobs (hopefully).
+
+I am experienced in several aspects of software development: from monolith to microservices, data-intensive applications, background jobs a scale, CI/CD solutions and static website generation (like this one!).
 
 Feel free to contact me for your next-big-thing project or just small collaborations.
 

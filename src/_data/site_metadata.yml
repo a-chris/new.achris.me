@@ -68,7 +68,7 @@ skills:
   - title: frontend
     image: website.webp
     list:
-    - name: Vanilla
+    - name: Javascript
       num: 90
     - name: React
       num: 80
