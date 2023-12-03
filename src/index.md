@@ -2,11 +2,11 @@
 layout: intro
 ---
 
-<b>Ehi, welcome to my website! I'm Christian, a software developer from Italy.</b>
+<b>Ehi, welcome to my website! I'm Christian</b>
 
-I'm a passionate software developer and I love working on side projects or side jobs (hopefully).
+I'm a passionate software developer from Italy and I love working on side projects to create my own products.
 
-I am experienced in several aspects of software development: from monolith to microservices, data-intensive applications, background jobs a scale, CI/CD solutions and static website generation (like this one!).
+I am experienced in several aspects of software development: from monolith to microservices, data-intensive applications, background jobs at a scale, CI/CD solutions and static website generation (like this one!).
 
 Feel free to contact me for your next-big-thing project or just small collaborations.
 
