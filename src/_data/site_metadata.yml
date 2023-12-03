@@ -22,12 +22,11 @@ contacts:
     name: Twitter
 
 timeline:
-  - title: tiTrovo.casa
-    period: May 2022 - current
-    url: https://titrovo.casa
+  - title: Coney
+    period: Nov 2023 - current
+    url: https://coney.app
     description:
-    - The easiest way to find a house to rent or buy in Italy!
-    - Web application & Telegram Bot
+    - Personal finance app
     - Ruby on Rails
   - title: Extendi
     period: Mar 2021 - current
