@@ -7,14 +7,8 @@
 @import "components/grid";
 @import "components/tag";
 
-@font-face {
-  font-family: "CommitMono";
-  font-weight: regular;
-  src: url("/fonts/CommitMono.otf") format("opentype");
-}
-
 :root {
-  --font-family: "CommitMono";
+  --font-family: "DM Mono";
   --font-size: 18px;
   --block-spacing-vertical: calc(var(--spacing) * 3) !important;
 
