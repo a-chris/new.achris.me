@@ -24,14 +24,6 @@
     text-align: center;
   }
 
-  .tag {
-    font-size: smaller;
-    background-color: var(--gray-lighter);
-    padding: 0.2em 0.6em;
-    border-radius: 100px;
-    margin-bottom: 1px;
-  }
-
   pre,code {
     text-align: left;
   }
@@ -61,13 +53,5 @@
       border-top-left-radius: var(--border-radius);
       border-top-right-radius: var(--border-radius);
     }
-  }
-
-  .tag {
-    font-size: smaller;
-    background-color: var(--gray-lighter);
-    padding: 0.2em 0.6em;
-    border-radius: 100px;
-    margin-bottom: 1px;
   }
 }

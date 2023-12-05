@@ -1,11 +1,11 @@
-@import "colors";
-
+@import "components/nav";
 @import "components/body";
 @import "components/timeline";
 @import "components/project";
 @import "components/post";
 @import "components/callout";
 @import "components/grid";
+@import "components/tag";
 
 @font-face {
   font-family: "CommitMono";
@@ -15,10 +15,12 @@
 
 :root {
   --font-family: "CommitMono";
-  --font-size: 19px;
+  --font-size: 18px;
   --block-spacing-vertical: calc(var(--spacing) * 3) !important;
 
   --callout-color: var(--color);
+
+  --nav-height: 80px;
 }
 
 :root:not([data-theme="dark"]) {

@@ -21,8 +21,19 @@
 }
 
 .post-article {
-  display: flex;
-  padding: 1vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+
+  @media (min-width: 600px) {
+    grid-template-columns: auto 1fr;
+  }
+
+  & > div {
+    padding-left: 1em;
+  };
+
+  padding: 2vw;
   margin: 0;
   margin-bottom: 1.5em;
 
@@ -44,17 +55,10 @@
     aspect-ratio: 5/3;
     object-fit: cover;
     height: 100%;
-    width: 200px;
     border-radius: 4px;
 
-    @media (max-width: 1200px) {
-      width: 200px;
-    }
-    @media (max-width: 800px) {
-      width: 150px;
-    }
-    @media (max-width: 500px) {
-      width: 70px;
+    @media (min-width: 600px) {
+      max-width: 200px;
     }
   }
 }
