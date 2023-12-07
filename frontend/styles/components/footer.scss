@@ -1,0 +1,20 @@
+body > footer {
+  text-align: center;
+  padding: 1em 0 !important;
+  margin-top: 1em;
+  font-size: 80%;
+  background-color: var(--black-light);
+  color: var(--white-almost);
+
+  a {
+    color: var(--white-almost);
+
+    img {
+      width: 17px;
+      color: white;
+      background-color: white;
+      border-radius: 100%;
+      border: 1px solid white;
+    }
+  }
+}

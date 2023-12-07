@@ -42,7 +42,15 @@
   footer {
     // container of the content
     padding: 1em;
+    letter-spacing: -1px;
     background-color: var(--background-color);
+
+    .title-container {
+      font-size: larger;
+      a {
+        --primary: var(--h1-color);
+      }
+    }
   }
 
   header {

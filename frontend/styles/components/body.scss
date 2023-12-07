@@ -1,9 +1,9 @@
 body {
-  font-family: "CommitMono", -apple-system, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "DM Mono", -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
   line-height: 1.7;
-  min-height: 100vh;
+  min-height: 100dvh;
 
   & > header {
     text-align: center;
@@ -12,45 +12,10 @@ body {
     a {
       text-decoration: none;
     }
+
     h1 {
-      font-family: "CommitMono";
       text-transform: uppercase;
       letter-spacing: 0.1em;
-    }
-  }
-
-  // & > main {
-  //   padding: 2em 8em !important;
-
-  //   @media (max-width: 1200px) {
-  //     padding: 30px 3em !important;
-  //   }
-  //   @media (max-width: 800px) {
-  //     padding: 20px 1em !important;
-  //   }
-  //   @media (max-width: 500px) {
-  //     padding: 16px 8px !important;
-  //   }
-  // }
-
-  & > footer {
-    text-align: center;
-    padding: 1em 0 !important;
-    margin-top: 1em;
-    font-size: 80%;
-    background-color: var(--black-light);
-    color: var(--white-almost);
-
-    a {
-      color: var(--white-almost);
-
-      img {
-        width: 17px;
-        color: white;
-        background-color: white;
-        border-radius: 100%;
-        border: 1px solid white;
-      }
     }
   }
 }

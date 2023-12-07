@@ -2,7 +2,7 @@
 layout: intro
 ---
 
-<b>Ehi, welcome to my website! I'm Christian</b>
+<b style="font-size:x-large;">Ehi, welcome to my website! I'm Christian</b>
 
 I'm a passionate software developer from Italy and I love working on side projects to create my own products.
 
