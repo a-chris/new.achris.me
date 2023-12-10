@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Best VS Code extensions and settings for Ruby and Ruby on Rails
+title:  Best Visual Studio Code extensions and settings for Ruby and Rails
 date:   2023-11-06 13:08:42 +0200
 categories: posts
 image: /images/blog/ruby-vscode.webp
-description: Visual Studio Code extensions and settings to work with Ruby and Ruby on Rails and bring several RubyMine features.
+description: Best Visual Studio Code extensions and settings to work with Ruby and Ruby on Rails and bring several RubyMine features.
 ---
 
 I started using Ruby three years ago and Visual Studio Code has been my preferred IDE since day one. Coming from a Java background, I initially tried using RubyMine: it had several feature I was missing on VS Code but it was resource-expensive and I didn't like the UI (I know it has improved recently).

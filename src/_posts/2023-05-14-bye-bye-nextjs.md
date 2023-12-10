@@ -26,7 +26,7 @@ export const meta = {
 
 Then I tried to add internationalization because I wanted the homepage to be in both Italian and English, while the blog section had to be in English only. So, I created my own **useTranslation** hook with a few lines of code. That was the most fun thing I did for this website, to be honest.
 
-I wrote about this solution in a previous post: [Build your own useTranslation hook with Next.js](/blog/build_your_own_use_translation)
+I wrote about this solution in a previous post: [Build your own useTranslation hook with Next.js](/posts/2023/05/14/bye-bye-nextjs/)
 
 Once you have added internationalization, you will likely want a good sitemap that allows Google to understand the website structure and available languages. I built my own solution with a Javascript script that runs after each build, but it wasn't a pleasure to work on.
 
