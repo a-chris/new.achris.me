@@ -3,11 +3,31 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
   line-height: 1.7;
+  letter-spacing: -1px;
   min-height: 100dvh;
 
-  & > header {
+  &>header {
     text-align: center;
     padding: 1em !important;
+    background-color: antiquewhite;
+
+    #avatar-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #avatar {
+      border-radius: 100%;
+      width: 100px;
+      height: 100px;
+      filter: drop-shadow(3px 3px 5px #6969694a);
+    }
+
+    #contacts-container {
+      width: fit-content;
+      margin: auto;
+    }
 
     a {
       text-decoration: none;

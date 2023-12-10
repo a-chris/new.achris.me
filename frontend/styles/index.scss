@@ -10,6 +10,7 @@
 
 :root {
   --font-family: "DM Mono";
+  --font-weight: 300;
   --font-size: 18px;
   --block-spacing-vertical: calc(var(--spacing) * 3) !important;
 
@@ -40,6 +41,11 @@
 hr {
   margin: 1rem auto;
   max-width: 500px;
+}
+
+b, strong {
+  // since we have no bolder, we have to override Pico.css default
+  font-weight: bold !important;
 }
 
 article {
