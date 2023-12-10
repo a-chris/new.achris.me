@@ -10,16 +10,14 @@ description: >-
   Christian Toscano - Backend & Ruby Software Developer. I write about technical stuff that I learn for my job and my side projects.
 
 contacts:
+  - url: https://twitter.com/achris_15
+    name: Twitter
+  - url: https://ruby.social/@achris
+    name: Mastodon
   - url: https://github.com/a-chris
     name: GitHub
   - url: https://www.linkedin.com/in/a-chris
     name: Linkedin
-  - url: https://medium.com/@a.christian.toscano
-    name: Medium
-  - url: https://ruby.social/@achris
-    name: Mastodon
-  - url: https://twitter.com/a_chris15
-    name: Twitter
 
 timeline:
   - title: Coney
