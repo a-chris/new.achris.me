@@ -17,6 +17,10 @@ body {
       align-items: center;
     }
 
+    h1 {
+      --h1-color: var(--black-almost) !important;
+    }
+
     #avatar {
       border-radius: 100%;
       width: 100px;
