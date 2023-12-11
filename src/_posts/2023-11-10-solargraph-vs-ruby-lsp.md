@@ -38,8 +38,8 @@ The installation process involves a series of steps to have everything set up co
 
 Note that there have been a few changes in the Solargraph CLI commands in the latest releases and the official documentation is not at its best.
 
-#### It's deprecated, is it dead?
-In 2023 Solargraph has been deprecated in favor of Ruby LSP. It's not dead, but it is largely deprecated due to funding and due to the mantainer having very little time to work on it. However it remains a valid and well working solution for projects not using RBS.
+#### Is it dead?
+Solargraph it's not dead and it's still largely used, even among my colleagues and myself, but it is living a slow development phase since it's backed by the Ruby community instead of having a big company behind. It remains a valid and well working solution for projects not using RBS.
 
 There have been an interesting thread on Mastodon if you want to know more about the current state of Solargraph and Ruby LSP: [link](https://ruby.social/@achris/111551466092993796)
 
