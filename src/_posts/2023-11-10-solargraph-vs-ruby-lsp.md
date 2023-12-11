@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solargraph vs Ruby LSP: state of Ruby Language Servers"
+title: "Solargraph vs Ruby LSP: which one to choose?"
 date:   2023-11-10 13:08:42 +0200
 categories: posts
 image: /images/blog/solargraph-rubylsp.png
@@ -56,13 +56,13 @@ One thing I noticed is that Ruby LSP is still missing the `Go to definition` fea
 ### Choosing Your Coding Companion
 
 ![RubyLSP](/images/blog/solargraph-rubylsp.png)
-<small>(just joking, the Ruby community is one of the best out there ♥️)
-</small>
+<figcaption align = "center">(just joking, the Ruby community is one of the best ♥️)</figcaption>
 
 If you're working with project that doesn't provide RBS, Solargraph is still your go-to companion. On the flip side, if your project provides RBS, go for Ruby LSP. Its accuracy and comprehensiveness make it a delight for such setups.
 
-**Hold on, there is more. What I suggest you is to install both of them!
-Since they work in different ways, they should not conflict and you can benefit from the best of both at the same time.**
+**Hold on, there is more. I suggest you to install both of them!**
+
+Since they work in different ways, they should not conflict and you can benefit from the best of both at the same time: Solargraph for YARD and Ruby LSP for RBS, while having RSpec integration in VSCode and `Go to definition` at the same time.
 
 ### What About the Future?
 The future looks bright for Ruby LSP, with the backing of Shopify and the community's enthusiasm. It's still in its early stages, but it's gaining popularity, and I'm excited to see what the future holds.
@@ -71,3 +71,5 @@ The future looks bright for Ruby LSP, with the backing of Shopify and the commun
 Solargraph and Ruby LSP are both great language servers, and I can't pick a clear winner. Solargraph is still a reliable choice for projects that don't use RBS, while Ruby LSP is the go-to choice for projects that provide RBS.
 
 In conclusion, I'm excited about the evolution of Ruby development tools, especially with Shopify's dedication to the Ruby ecosystem and the recent Rails, Hotwire and Turbo updates. The future looks promising, and I anticipate seeing Ruby LSP become the new standard for Ruby Language Servers.
+
+I'm also aware of [Fuzzy Ruby Server](https://marketplace.visualstudio.com/items?itemName=Blinknlights.fuzzy-ruby-server), which provides useful features like references, renaming, jump to the definitions for methods and variables. Let me know if you have tried it and if I should mention it in this comparison 😎
