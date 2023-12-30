@@ -28,7 +28,7 @@ Feel free to contact me for your next-big-thing project or just small collaborat
 </div>
 
 ### Skills
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px, 1fr));grid-gap:2em;">
+<div class="grid">
   <% site.metadata.skills.each do |skill| %>
     <%= render 'skill', skill: %>
   <% end %>

@@ -80,7 +80,7 @@ skills:
       num: 90
     - name: MySQL/MariaDB
       num: 80
-    - name: SQlite
+    - name: SQLite
       num: 80
     - name: MongoDB
       num: 70

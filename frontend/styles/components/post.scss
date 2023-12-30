@@ -44,16 +44,14 @@
   }
 
   & > div {
-    padding-left: 1em;
+    @media (min-width: 600px) {
+      padding-left: 1em;
+    }
   };
 
   padding: 2vw;
   margin: 0;
   margin-bottom: 1.5em;
-
-  & > div {
-    padding-left: 1em;
-  }
 
   .post-title {
     letter-spacing: -1px;

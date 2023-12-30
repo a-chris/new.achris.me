@@ -34,6 +34,7 @@
   --muted-border-color: var(--action-color); // used by hr
   --block-spacing-vertical: 8em;
   --code-color: black !important;
+  --grid-spacing-vertical: var(--spacing);
 
   --callout-color: var(--black-almost);
 }
