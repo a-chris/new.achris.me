@@ -34,41 +34,50 @@ The installation process involves a series of steps to have everything set up co
 1. install the solargraph VSCode extension
 2. install the solargraph and yard gems
 3. run "solargraph download-core"
-4. run "yard gems" (optional but recommended)
+4. run "yard gems": optional but recommended, it will index
+5. run "yard config --gem-install-yri" to generate YARD documentation automatically when you install new gems
+You can find more info about the Solargraph/YARD coexistence in the [official doc]([text](https://solargraph.org/guides/yard))
 
 Note that there have been a few changes in the Solargraph CLI commands in the latest releases and the official documentation is not at its best.
 
-#### Is it dead?
-Solargraph it's not dead and it's still largely used, even among my colleagues and myself, but it is living a slow development phase since it's backed by the Ruby community instead of having a big company behind. It remains a valid and well working solution for projects not using RBS.
+#### Limits of Solargraph
+Solargraph it's not dead and it's still largely used, even among my colleagues and myself, but it is living a slow development phase since it's backed by the Ruby community instead of having a big company behind. It remains a valid and well working solution.
 
-There have been an interesting thread on Mastodon if you want to know more about the current state of Solargraph and Ruby LSP: [link](https://ruby.social/@achris/111551466092993796)
-
-### Ruby LSP: The RBS Revolution
+### Ruby LSP
 
 ![RubyLSP](/images/blog/vscode/ruby_lsp.webp)
 
-On the other hand, Ruby LSP takes a different route, making use of RBS for hints and syntax suggestions. RBS proves to be a more accurate and comprehensive type system compared to YARD but it is . Ruby LSP is designed to be more extendible and customizable, offering the possibility to createthird party extensions. to make it work with RSpec [ruby-lsp-rspec](https://github.com/st0012/ruby-lsp-rspec) and [ruby-lsp-rails](https://github.com/Shopify/ruby-lsp-rails) for Rails syntax suggestions.
+On the other hand, Ruby LSP takes a different route, making use of RBS for hints and syntax suggestions. RBS proves to be a more accurate and comprehensive type system compared to YARD. Ruby LSP is designed to be more extendible and customizable, offering the possibility to create third party extensions to make it work with RSpec [ruby-lsp-rspec](https://github.com/st0012/ruby-lsp-rspec) and [ruby-lsp-rails](https://github.com/Shopify/ruby-lsp-rails) for Rails syntax suggestions.
 
-Performance-wise, it used to run `bundle install` with an annoying loading message that made my computer slow everytime the Gemfile was changed. Good news, it seems to be a thing of the past, at least in my recent experience.
+Performance-wise, I've personally experienced that it used to run `bundle install` with an annoying loading message that made my computer slow everytime the Gemfile was changed. Good news, it doesn't show the alert anymore but if you open the Ruby LSP output in VS Code you will be able to see that it still downloads the dependencies. I suspect they managed to make it smarter, in fact I did not notice any performance issue in my recent experience.
 
-One thing I noticed is that Ruby LSP is still missing the `Go to definition` feature that is super-useful while navigating a codebase, in particular with Ruby.
+#### Limits of Ruby LSP
+
+While utilizing Ruby LSP, I observed two limitations:
+
+1. **The absence of the `Go to definition`** feature makes code navigation in your project more challenging when relying on Ruby LSP. Honestly, it's a big deal for me because I daily use that feature.
+2. **Ruby LSP exclusively supports Ruby versions greater than or equal to 3.0**. It's worth noting that Ruby 2.7.8 reached its end of life on March 31, 2023, and even the 3.0.x version is scheduled for end of life on March 31, 2024. However, in real-world scenarios, many of us may still be operating with legacy versions in our job environments. Just keep this in mind before investing time in Ruby LSP.
+
+**UPDATE: ** after deep diving on Reddit, I discovered a workaround for the Ruby version, as explained a piece of documentation from Shopify on Github. [Take a look](https://github.com/shopify/vscode-ruby-lsp?tab=readme-ov-file#using-a-custom-gemfile) if you want to use Ruby LSP with older Ruby versions.
+
+![RubyLSP-error](/images/blog/solargraph-vs-rubylsp/error.png)
 
 ### Choosing Your Coding Companion
 
 ![RubyLSP](/images/blog/solargraph-rubylsp.png)
-<figcaption align = "center">(just joking, the Ruby community is one of the best ♥️)</figcaption>
+<figcaption align = "center">(just joking, the Ruby community is the best ♥️)</figcaption>
 
-If you're working with project that doesn't provide RBS, Solargraph is still your go-to companion. On the flip side, if your project provides RBS, go for Ruby LSP. Its accuracy and comprehensiveness make it a delight for such setups.
+If you're working on legacy projects with Ruby < 3.0, Solargraph is still your go-to companion. On the flip side, if your project involves modern Ruby versions and, RBS, go for Ruby LSP. Its accuracy and comprehensiveness make it a delight for such setups.
 
 **Hold on, there is more. I suggest you to install both of them!**
 
-Since they work in different ways, they should not conflict and you can benefit from the best of both at the same time: Solargraph for YARD and Ruby LSP for RBS, while having RSpec integration in VSCode and `Go to definition` at the same time.
+Since they work in different ways, they should not conflict and you can benefit from the best of both at the same time: Solargraph for YARD and and `Go to definition`, Ruby LSP for RBS and a very good RSpec integration in VSCode, at the same time.
 
 ### What About the Future?
 The future looks bright for Ruby LSP, with the backing of Shopify and the community's enthusiasm. It's still in its early stages, but it's gaining popularity, and I'm excited to see what the future holds.
 
 ### The Verdict
-Solargraph and Ruby LSP are both great language servers, and I can't pick a clear winner. Solargraph is still a reliable choice for projects that don't use RBS, while Ruby LSP is the go-to choice for projects that provide RBS.
+Solargraph and Ruby LSP are both great language servers, and I can't pick a clear winner. Solargraph is still a reliable choice for most of projects, while Ruby LSP is the go-to choice for projects that provide RBS.
 
 In conclusion, I'm excited about the evolution of Ruby development tools, especially with Shopify's dedication to the Ruby ecosystem and the recent Rails, Hotwire and Turbo updates. The future looks promising, and I anticipate seeing Ruby LSP become the new standard for Ruby Language Servers.
 
