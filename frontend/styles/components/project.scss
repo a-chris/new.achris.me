@@ -46,10 +46,14 @@
     background-color: var(--background-color);
 
     .title-container {
-      font-size: larger;
+      font-size: large;
       a {
         --primary: var(--h1-color);
       }
+    }
+
+    p:last-child {
+      margin-bottom: 0 !important;
     }
   }
 
