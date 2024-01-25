@@ -17,6 +17,10 @@
   --callout-color: var(--color);
 
   --nav-height: 80px;
+
+  @media (prefers-color-scheme: light) {
+    --color: var(--h2-color) !important;
+  }
 }
 
 :root:not([data-theme="dark"]) {
@@ -26,8 +30,6 @@
   --gray-light: #d3d3d3;
   --gray-lighter: #f4f4f4;
 
-  // --body-background: floralwhite;
-  --body-color: #444;
   --heading-color: black;
   --action-color: antiquewhite;
   --muted-border-color: var(--action-color); // used by hr
@@ -36,6 +38,7 @@
   --grid-spacing-vertical: var(--spacing);
 
   --callout-color: var(--black-almost);
+  --code-background-color: var(--gray-light);
 }
 
 hr {
