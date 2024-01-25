@@ -24,25 +24,27 @@ timeline:
     period: Nov 2023 - current
     url: https://coney.app
     description:
-    - Personal finance app
-    - Ruby on Rails
+    - Personal finance platform with Hotwire & Ruby on Rails.
   - title: Extendi
     period: Mar 2021 - current
     url: https://www.extendi.it
     description:
-    - Team leader & coordinator
-    - Backend Developer (Ruby, Ruby on Rails)
-    - AWS
+    - Team leader for a team of 3 developers
+    - Ruby on Rails Fullstack Developer
+    - Sidekiq at a scale with millions of jobs
+    - AWS, Docker, Kubernetes, CI/CD
+    - Microservices infrastructure
   - title: Lab51
     period: Oct 2020 - Mar 2021
     description:
-    - Full Stack Developer (React, NodeJS)
+    - Full-Stack Developer (ExpressJS - NextJS - React)
+    - AWS, Docker
   - title: Mango Mobile Solutions
-    period: Mar 2019 - Oct 2020
+    period: Feb 2019 - Oct 2020
     description:
-    - Full Stack Developer (React, Spring MVC)
-    - Android Developer
-    - DevOps
+    - Full-Stack Developer (Spring Boot, React)
+    - Mobile Android Developer (Java, Kotlin)
+    - DevOps responsible for CI/CD infrastructure and Linux VPS
   - title: Bachelor Degree in Engineering & Computer Science
     period: Mar 2019
     description:
@@ -102,9 +104,9 @@ skills:
 
 languages:
   - Ruby
-  - Go
-  - Kotlin
-  - Java
   - Javascript
   - Typescript
+  - Kotlin
+  - Java
+  - Go
   - Python
