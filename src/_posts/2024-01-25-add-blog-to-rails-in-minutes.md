@@ -27,7 +27,7 @@ Here's our roadmap:
 1. Parse Markdown files and convert them to HTML.
 2. Make Rails dynamically recognize routes.
 3. Extract information from Markdown files: title, description, image, and article URL.
-4. Implement our custom style for the article page.
+4. Customizing the article page.
 
 Let's dive into step 1.
 
@@ -126,7 +126,7 @@ To collect article information, we'll utilize front matter!
 
 In the world of Markdown, front matter is a powerful tool that allows you to embed metadata or configuration settings directly within your document. This metadata is typically placed at the beginning of a Markdown file and is enclosed by triple dashes (---).
 
-```
+```yaml
 ---
 title: My Awesome Blog Post
 author: John Doe
@@ -150,7 +150,7 @@ Front matter is commonly used in static site generators, blogging platforms, and
 
 At the beginning of each Markdown file, include front matter with blog post information you want to display in the posts list. Common fields include:
 
-```
+```yaml
 ---
 title: Article title
 image: "/blog/article_image.png"
@@ -188,10 +188,114 @@ and integrate this into our BlogController:
 
 We've added the url for each blog post since we dynamically calculate the equivalent of the show page, allowing users to navigate to that page when clicking on a blog post.
 
-### 4. Implement our custom style for the article page.
+![ugly version](/images/blog/add-blog-to-rails-in-minutes/ugly.png)
 
-Stay tuned, this section will come as soon as possible!
+### 4. Customizing for the article page.
 
+With our fully functional blog section showcasing a list of available posts and the ability to navigate to individual post pages, let's add the finishing touches for a polished user experience. In this step, we'll focus on customizing the article page by introducing custom CSS styling and incorporating a social sharing feature using AddToAny.
+
+Here's how we make these enhancements to the `MarkdownToHtml`:
+
+```ruby
+module Converters
+  class MarkdownToHtml
+    TEMPLATE_CONTENT = <<-HTML
+      <div class="post-page">
+
+        ${content}
+
+        <!-- AddToAny BEGIN -->
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+          Condividi su
+          <a class="a2a_button_x"></a>
+          <a class="a2a_button_whatsapp"></a>
+          <a class="a2a_button_facebook"></a>
+          <a class="a2a_button_telegram"></a>
+          <a class="a2a_button_linkedin"></a>
+        </div>
+        <script>
+            var a2a_config = a2a_config || {};
+            a2a_config.num_services = 5;
+        </script>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+          <!-- AddToAny END -->
+        </div>
+      </div>
+    HTML
+
+    def call(template, source)
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+
+      # remove the front matter information
+      sanitized_source = source.gsub(/---([\S\s]*)---/, "").strip
+
+      html = TEMPLATE_CONTENT.gsub("${content}", markdown.render(sanitized_source))
+
+      "#{html.inspect}.html_safe"
+    end
+  end
+end
+```
+
+In this modification, we've introduced the `${content}` placeholder in the HTML template, acting as a marker for the Markdown content. This placeholder gets replaced with the actual HTML-rendered content using the gsub method.
+
+Additionally, we've removed the front matter information from the source to prevent it from appearing in the final HTML.
+
+To make the page visually appealing, create a CSS file, for example, `app/assets/stylesheets/blog.scss`, and define styles for elements inside `.post-page`:
+
+```scss
+.post-page {
+  margin: auto;
+  padding-top: 2em;
+
+  @media (min-width: $mobile-width) {
+    max-width: 800px;
+  }
+
+  h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    margin-top: 2em;
+    margin-bottom: 0.7em;
+  }
+
+  p {
+    line-height: 2;
+    font-size: 19px;
+  }
+
+  img {
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 8px;
+    margin-top: 0.8em;
+  }
+
+  .a2a_kit {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+
+    a {
+      margin: 0 0.3rem;
+    }
+  }
+}
+```
+
+This CSS file defines styles for various elements within .post-page, ensuring a visually pleasing layout for your blog posts.
+
+Feel free to customize these styles further to match your design preferences. As your blog takes shape, these enhancements will contribute to a delightful reading experience.
+
+![nice version](/images/blog/add-blog-to-rails-in-minutes/nice.png)
 
 ### Conclusion
 
