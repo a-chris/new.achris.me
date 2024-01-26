@@ -8,8 +8,12 @@ body {
 
   &>header {
     text-align: center;
-    padding: 1em !important;
-    padding-top: 2em !important;
+    padding: 1em 0;
+
+    @media (min-width: 600px) {
+      padding-top: 2em;
+      padding: 1em;
+    }
 
     #avatar-container {
       display: flex;
@@ -19,9 +23,14 @@ body {
 
     #avatar {
       border-radius: 100%;
-      width: 100px;
-      height: 100px;
+      width: 50px;
+      height: 50px;
       filter: drop-shadow(3px 3px 5px #6969694a);
+
+      @media (min-width: 600px) {
+        width: 100px;
+        height: 100px;
+      }
     }
 
     #contacts-container {
@@ -35,7 +44,13 @@ body {
 
     h1 {
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 1px;
+      margin: 12px;
+
+      @media (min-width: 600px) {
+        margin: 20px;
+        letter-spacing: 4px;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 .post-page {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
 
   h2, h3, h4, h5, h6 {
@@ -9,14 +9,10 @@
     text-align: center; // centering images
   }
   img {
-    max-width: 600px;
+    max-width: 100%;
   }
   p.full-width img {
     max-width: 100%;
-  }
-
-  .post-title {
-    letter-spacing: -1px;
   }
 
   .a2a_kit {
@@ -54,7 +50,7 @@
   margin-bottom: 1.5em;
 
   .post-title {
-    letter-spacing: -1px;
+    letter-spacing: 0px;
   }
 
   a {
