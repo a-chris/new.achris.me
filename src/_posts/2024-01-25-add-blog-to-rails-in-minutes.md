@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Integrating a Blog section to your Rails app using Markdown in minutes"
+title: Integrating a Blog section to your Rails app using Markdown in minutes
 date:   2024-01-25 13:08:42 +0200
 categories: posts
 image: /images/blog/add-blog-to-rails-in-minutes/workflow.png

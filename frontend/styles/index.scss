@@ -41,6 +41,10 @@
   --code-background-color: var(--gray-light);
 }
 
+* {
+  text-wrap: pretty;
+}
+
 hr {
   margin: 1rem auto;
   max-width: 500px;
