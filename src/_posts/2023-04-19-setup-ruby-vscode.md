@@ -7,17 +7,17 @@ image: /images/blog/ruby-vscode.webp
 description: Best Visual Studio Code extensions and settings to work with Ruby and Ruby on Rails and bring several RubyMine features.
 ---
 
-I started using Ruby three years ago and Visual Studio Code has been my preferred IDE since day one. Coming from a Java background, I initially tried using RubyMine: it had several feature I was missing on VS Code but it was resource-expensive and I didn't like the UI (I know it has improved recently).
+I've been using Ruby for three years and Visual Studio Code has been my preferred IDE since day one. Coming from a Java background, I initially tried using RubyMine: it had several feature I was missing on VS Code but it was resource-expensive and I didn't like the UI (I know it has improved recently).
 
-**So I looked for the best VS Code extentions and settings to work with Ruby and Ruby (and Ruby on Rails) to also brings some of the RubyMine features I was missing.**
+**This led me to seek out the best VS Code extentions and settings to work with Ruby (and Ruby on Rails) to brings some of the RubyMine features I was missing.**
 
 I am currently using these extensions on both MacOS and Linux (Ubuntu/Fedora) but I'm confident that everything should work fine on Windows as well.
 
-Here are the extensions that save me a lot of time every day and make programming with Ruby ~~less painful~~ a pleasure! I will also share my JSON settings so that you can have everything running in a few minutes 🚀
+Here are the extensions that save me a lot of time every day and make programming with Ruby ~~less painful~~ a pleasure! I will also share my JSON settings so that you can have everything setup and running in a few minutes 🚀
 
 ## Copy Ruby Reference
 
-First we go with [Copy Ruby Reference](https://marketplace.visualstudio.com/items?itemName=mickey.code-copy-ruby-ref), a mind blowing extension for Ruby developers, time saver extension that add a new option in the right-click menù, called "copy Ruby reference" that allows to copy the whole name of a Ruby class even if it is made of multiple modules!
+First we go with [Copy Ruby Reference](https://marketplace.visualstudio.com/items?itemName=mickey.code-copy-ruby-ref), a time saver extension, which simplifies copying the full name of a Ruby class. Just right-click and select "copy Ruby reference" to copy class names including all their modules.
 
 ![CopyRubyReference](/images/blog/vscode/ruby_reference.webp)
 
@@ -33,25 +33,25 @@ If you have already installed and configured Solargraph then you can jump to the
 
 ### Installing Solargraph
 
-[Solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph) requires its Ruby gem to work properly, so we have to install it with:
+[Solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph) requires its Ruby gem to work properly, you can install it with:
 
 ```
 gem install solargraph
 ```
 
-and then install the Ruby Solargraph extension for Visual Studio Code.
+and install the Ruby Solargraph extension for Visual Studio Code.
 
-Now we need to set the Solargraph configurations in VS Code: first of all, we need to know where solargraph gem is located, so we run
+Then, find the gem's location:
 
 ```
 which solargraph
 ```
 
-and copy the result that in my case is `/home/chri/.rbenv/shims/solargraph` because I'm using **rbenv** (it is not important at the moment).
+and copy the result, that in my case is `/home/chri/.rbenv/shims/solargraph` because I'm using **rbenv** (it is not important at the moment).
 
 Open the **VS Code JSON Settings** and paste the following lines:
 ```
-"solargraph.commandPath": "...",
+"solargraph.commandPath": "YOUR_GEM_PATH",
 "solargraph.formatting": true
 ```
 
@@ -59,17 +59,24 @@ where `commandPath` is the path you obtain by running `which solargraph`.
 
 ### Solargraph tips
 
-Now that Solargraph is ready to work, open a terminal inside the folder of your Ruby project and run:
+In previous versions of Solargraph I used to run `solargraph bundle` to analyze the project dependencies, download all the gems documentations and obtain intellisense and code suggestions. Sadly, this command has been deprecated with Solargraph 0.50.0.
 
+Luckily we can obtain similar results by using the `yard` gem.
+
+**Installing yard**
+
+Install the yard gem with
+```bash
+  gem install yard
 ```
-solargraph bundle
+
+now, download the gems documentation and RBS files with
+```ruby
+  yard gems
+  yard config --gem-install-yri
 ```
 
-let it go, it may take a few minutes depending on your project size.
-
-This magic command makes Solargraph analyze your project and all of its gems to download all the needed documentation. This will make the intellisense and code suggestions much smarter because it allows VS Code to understand the variables and return types, methods definitions, etc.. that you are working with.
-
-You have to run this command in each one of your Ruby projects and you can run it periodically once you have installed new gems or made substantial changes to the project.
+These two lines ensure your project's dependencies are analyzed, the gems are documented, and get a chance to have intellisense.
 
 ## Ruby LSP
 
@@ -91,13 +98,40 @@ Cons:
 
 So, it has its pros and is going to the right direction, this will probably be the future of Ruby on VS Code but at the moment it does not offer any life-changing feature while having some annoying downturns. It's up to you whether to use it or not, give it a chance and let me know what you think.
 
-# Ruby Interpolation Autocomplete
+<div style="border-radius:6px;padding:1em;background-color:rgba(52,183,67,.12);display:flex;">
+  <div style="padding-right:1em;font-size:x-large;">💡</div>
+  <div>
+    I've wrote a more in-depth comparison between Solargraph and Ruby LSP,
+    <br/>
+    <a href="/posts/2023/11/10/solargraph-vs-ruby-lsp">give it a look here.</a>
+  </div>
+</div>
+
+## Ruby Interpolation Autocomplete
 
 ![RubyInterpolationAutocomplete](/images/blog/vscode/ruby_int_compl.webp)
 
 [Ruby Interpolation Autocomplete](https://marketplace.visualstudio.com/items?itemName=ghbozz.hashtag) is a small but well-appreciated extention that automatically add the `#{}` when you first type `#` inside a Ruby string.
 
 This only work for strings with double apex `"` or backtick ```.
+
+## Rails Schema
+
+Still wasting your time moving to the `schema.rb` every time you need to know which columns belong to a table? Please stop!
+
+![RailsSchema](/images/blog/vscode/rails_schema.png)
+
+[Rails Schema](https://marketplace.visualstudio.com/items?itemName=tavo.rails-schema) is a handy extension to keep a view of the database in the VS Code sidebar, it takes no time for configuration, just install it and you are ready to go.
+
+![RailsSchemaExample](/images/blog/vscode/rails_schema_example.png)
+
+## Rails DB Schema
+
+Another great addition to work with Ruby on Rails, [Rails DB Schema](https://marketplace.visualstudio.com/items?itemName=aki77.rails-db-schema) offers intellisense for database columns and a quick navigation to the selected table in the `schema.rb` file.
+
+![RailsDBSchemaExample](/images/blog/vscode/rails_db_schema_example.gif)
+
+![RailsDBSchemaNavigation](/images/blog/vscode/rails_db_schema_navigation.gif)
 
 ## ColorTabs
 
@@ -193,6 +227,28 @@ Now you can see the source code of a method by looking for its definition or you
 [Endwise](https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise) is a very handy extention that automatically adds `end` when required, for example if you type a new line after declaring a method or a block.
 It requires zero configurations, just install it and it will works for Ruby files.
 
+## Tailwind CSS
+
+TailwindCSS is undeniably the trendsetter in the world of CSS frameworks right now and after working with it I can understand why people love it so much.
+
+The go-to extension for working with it is [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) which I recommend you to install because it improves the development workflow by providing autocompletion and hover information.
+
+Now, to make it work with `.erb` files and moreover, to enable Tailwind intellisense and autocompletion with Rails `content_tag`, just paste these lines into your VS Code Settings!
+
+```json
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "html",
+    "erb": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "class: \"|'([^\"|']*)"
+  ],
+```
+
+and woilà, Tailwind classes autocompetion right in to your Rails views.
+
+![TailwindCSSAutocompletion](/images/blog/vscode/tailwindcss_autocomplete.png)
 
 ## Rails Open Partials
 
