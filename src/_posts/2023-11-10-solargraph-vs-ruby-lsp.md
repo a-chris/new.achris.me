@@ -27,8 +27,14 @@ Now that we've covered the basics, let's dive into the differences between Solar
 
 Solargraph relies on YARD documentation from your codebase and external gems. It's been my loyal companion, although not always perfect, especially when dealing with the magic of Ruby on Rails. Performance-wise, it's been a smooth ride on both Mac and Linux, with a few tricks up its sleeve to speed things up.
 
-For the curious minds, I've shared performance-enhancing and configuration tips in another tutorial
-[Best Visual Studio Code extensions and settings for Ruby and Rails](/posts/2023/11/06/setup-ruby-vscode/)
+<div style="border-radius:6px;padding:1em;background-color:rgba(52,183,67,.12);display:flex;margin:3em 0;">
+  <div style="padding-right:1em;font-size:x-large;">💡</div>
+  <div>
+    For the curious minds, I've shared performance-enhancing and configuration tips in another tutorial
+    <a href="/posts/setup-ruby-vscode">Best Visual Studio Code extensions and settings for Ruby and Rails.</a>
+  </div>
+</div>
+
 
 The installation process involves a series of steps to have everything set up correctly:
 1. install the solargraph VSCode extension

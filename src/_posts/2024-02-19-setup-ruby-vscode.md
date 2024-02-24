@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Best Visual Studio Code extensions and settings for Ruby and Rails
-date:   2023-11-06 13:08:42 +0200
+date:   2024-02-19 13:08:42 +0200
 categories: posts
 image: /images/blog/ruby-vscode.webp
 description: Best Visual Studio Code extensions and settings to work with Ruby and Ruby on Rails and bring several RubyMine features.
@@ -98,12 +98,11 @@ Cons:
 
 So, it has its pros and is going to the right direction, this will probably be the future of Ruby on VS Code but at the moment it does not offer any life-changing feature while having some annoying downturns. It's up to you whether to use it or not, give it a chance and let me know what you think.
 
-<div style="border-radius:6px;padding:1em;background-color:rgba(52,183,67,.12);display:flex;">
+<div style="border-radius:6px;padding:1em;background-color:rgba(52,183,67,.12);display:flex;margin:3em 0;">
   <div style="padding-right:1em;font-size:x-large;">💡</div>
   <div>
-    I've wrote a more in-depth comparison between Solargraph and Ruby LSP,
-    <br/>
-    <a href="/posts/2023/11/10/solargraph-vs-ruby-lsp">give it a look here.</a>
+    I wrote a more in-depth comparison between
+    <a href="/posts/solargraph-vs-ruby-lsp">Solargraph and Ruby LSP.</a>
   </div>
 </div>
 
@@ -114,6 +113,16 @@ So, it has its pros and is going to the right direction, this will probably be t
 [Ruby Interpolation Autocomplete](https://marketplace.visualstudio.com/items?itemName=ghbozz.hashtag) is a small but well-appreciated extention that automatically add the `#{}` when you first type `#` inside a Ruby string.
 
 This only work for strings with double apex `"` or backtick ```.
+
+<div style="border-radius:6px;padding:1em;background-color:bisque;display:flex;margin:3em 0;">
+  <div style="padding-right:1em;font-size:x-large;">❗️</div>
+  <div>
+    <strong>VimUsers:</strong> This extension may conflicy with the Vim one, as reported by
+    <a href="https://twitter.com/leenyburger/status/1759257808011432373">@leenyburger</a>
+    on X.
+  </div>
+</div>
+
 
 ## Rails Schema
 
