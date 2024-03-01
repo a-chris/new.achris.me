@@ -5,9 +5,14 @@
 # in the templates via {{ site.metadata.myvariable }}.
 
 title: Christian Toscano
-tagline: Backend & Ruby Software Developer
+tagline: Backend Team Leader & Fullstack Developer
 description: >-
-  Christian Toscano - Backend & Ruby Software Developer. I write about technical stuff that I learn for my job and my side projects.
+  Christian Toscano - Backend Team Leader & Fullstack Developer. I write about technical stuff that I learn for my job and my side projects.
+author:
+  twitter: achris_15
+twitter:
+  card: summary
+  username: achris_15
 
 contacts:
   - url: https://twitter.com/achris_15

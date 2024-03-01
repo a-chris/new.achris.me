@@ -17,7 +17,8 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: "" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://achris.me" # the base hostname & protocol for your site, e.g. https://example.com
+lang: "en_US"
 
 permalink: simple
 template_engine: erb
