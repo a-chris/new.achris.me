@@ -1,23 +1,53 @@
-<nav>
-  <ul>
-    <li><a id="nav-home" href="<%= relative_url '/' %>">home</a></li>
-    <li><a id="nav-projects" href="<%= relative_url '/projects' %>">projects</a></li>
-    <li><a id="nav-posts" href="<%= relative_url '/posts' %>">tech stories</a></li>
-  </ul>
+<nav class="navbar bg-gray-50">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a id="nav-home" class="py-4" href="<%= relative_url '/' %>">home</a></li>
+        <li><a id="nav-projects" class="py-4" href="<%= relative_url '/projects' %>">projects</a></li>
+        <li><a id="nav-posts" class="py-4" href="<%= relative_url '/posts' %>">tech stories</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl">
+      <%# LEFT LOGO %>
+    </a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 space-x-8">
+      <li><a id="nav-home" class="text-base" href="<%= relative_url '/' %>">home</a></li>
+      <li><a id="nav-projects" class="text-base" href="<%= relative_url '/projects' %>">projects</a></li>
+      <li><a id="nav-posts" class="text-base" href="<%= relative_url '/posts' %>">tech stories</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end"></div>
 </nav>
 
-<header>
-  <div id="avatar-container">
-    <img id="avatar" src="<%= relative_url '/images/avatar.webp' %>" alt="avatar"/>
-    <h1>Christian Toscano</h1>
+<header class="flex flex-col items-center justify-center mx-auto mb-16">
+  <div class="flex items-center space-x-4 lg:space-x-8">
+    <div class="avatar">
+      <div class="w-20 lg:w-28 mask mask-squircle">
+        <img src="<%= relative_url '/images/avatar.webp' %>" />
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <h1 class="text-2xl md:text-3xl mb-2">Christian Toscano</h1>
+        <p class="text-base text-base-content mb-4">Software Engineer</p>
+      </div>
+      <%# CONTACTS %>
+      <div class="flex space-x-4">
+        <% @metadata.contacts.each do |c| %>
+          <a href="<%= c.url %>" data-tooltip="<%= c.name %>" class="link-hover">
+            <img src="/images/contacts/<%= c.name.downcase %>.svg" style="width:25px;"/>
+          </a>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div id="contacts-container">
-    <% @metadata.contacts.each do |c| %>
-      <a href="<%= c.url %>" data-tooltip="<%= c.name %>" style="padding:20px;">
-        <img src="/images/contacts/<%= c.name.downcase %>.svg" style="width:20px;" />
-      </a>
-    <% end %>
-  </div>
+
 </header>
 
 <script>

@@ -1,0 +1,9 @@
+.a2a_kit {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+
+  a {
+    margin: 0 0.3rem;
+  }
+}

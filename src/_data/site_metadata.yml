@@ -25,39 +25,44 @@ contacts:
     name: Linkedin
 
 timeline:
-  - title: Coney
+  - title: ACME Corp
     period: Nov 2023 - current
-    url: https://coney.app
+    url: https://acmecorp.dev
     description:
-    - Personal finance platform with Hotwire & Ruby on Rails.
+    - Coney.app, personal finance platform
+    - tiTrovo.casa, house hunting solution
   - title: Extendi
     period: Mar 2021 - current
     url: https://www.extendi.it
     description:
-    - Team leader for a team of 3 developers
+    - Backend Team Leader
     - Ruby on Rails Fullstack Developer
-    - Sidekiq at a scale with millions of jobs
-    - AWS, Docker, Kubernetes, CI/CD
+    - Sidekiq at a scale
+    - AWS, Docker, CI/CD
     - Microservices infrastructure
-  - title: Lab51
+  - title: Lab51 Agency
     period: Oct 2020 - Mar 2021
     description:
-    - Full-Stack Developer (ExpressJS - NextJS - React)
+    - Full-Stack Developer (ExpressJS, NextJS, React)
     - AWS, Docker
-  - title: Mango Mobile Solutions
+  - title: Mango Mobile Agency
     period: Feb 2019 - Oct 2020
     description:
     - Full-Stack Developer (Spring Boot, React)
     - Mobile Android Developer (Java, Kotlin)
     - DevOps responsible for CI/CD infrastructure and Linux VPS
   - title: Bachelor Degree in Engineering & Computer Science
-    period: Mar 2019
+    period: Oct 2015 - Mar 2019
     description:
     - University of Bologna
 
 skills:
   - title: backend
     image: backend.webp
+    description: >-
+      Throughout my career, university studies, and side projects, I've had the opportunity to work with a variety of frameworks and languages.
+      While Ruby on Rails is my preferred solution for web application development, I've also gained experience with ExpressJS, Spring Boot, and Django.
+      I've integrated many third-party APIs and built REST and GraphQL APIs used by clients worldwide.
     list:
       - name: Ruby on Rails
         num: 100
@@ -71,6 +76,8 @@ skills:
         num: 70
   - title: frontend
     image: website.webp
+    description: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     list:
     - name: Javascript
       num: 90
@@ -80,6 +87,8 @@ skills:
       num: 80
   - title: data
     image: database.webp
+    description: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     list:
     - name: PostgreSQL
       num: 90
@@ -95,6 +104,8 @@ skills:
       num: 60
   - title: automation
     image: automation.webp
+    description: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     list:
     - name: Docker
       num: 90

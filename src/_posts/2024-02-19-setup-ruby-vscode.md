@@ -21,7 +21,7 @@ First we go with [Copy Ruby Reference](https://marketplace.visualstudio.com/item
 
 ![CopyRubyReference](/images/blog/vscode/ruby_reference.webp)
 
-So you will get `Strategies::Advertisement::Fetchers::Unnotified` in your clipboard, ready to be pasted and used in your code.
+So you will get `Strategies::..:Fetchers::Unnotified` in your clipboard, ready to be pasted and used in your code.
 
 ## Solargraph
 
@@ -117,7 +117,7 @@ This only work for strings with double apex `"` or backtick ```.
 <div style="border-radius:6px;padding:1em;background-color:bisque;display:flex;margin:3em 0;">
   <div style="padding-right:1em;font-size:x-large;">❗️</div>
   <div>
-    <strong>VimUsers:</strong> This extension may conflicy with the Vim one, as reported by
+    This extension may conflicy with the Vim one, as reported by
     <a href="https://twitter.com/leenyburger/status/1759257808011432373">@leenyburger</a>
     on X.
   </div>
@@ -148,11 +148,11 @@ Another great addition to work with Ruby on Rails, [Rails DB Schema](https://mar
 
 [ColorTabs](https://marketplace.visualstudio.com/items?itemName=orepor.color-tabs-vscode-ext) is the gem that I use to quickly recognize test files because it gives a different color to the current open tab of Visual Studio Code based on a series of regular expressions set by the user. In this case, my project uses RSpec for the test suite and I want the tabs to become green when a test is open in Visual Studio Code. In case you do not know, RSpec test files have the **_spec** suffix at the end of the name, that's the way I'm using to recognize them.
 
-`my_file.rb` => becomes => `my_file_spec.rb`
+`my_file.rb` becomes `my_file_spec.rb`
 
 Here is my configuration:
 
-```
+```json
 "colorTabs.ignoreCase": true,
 "colorTabs.titleBackground": true,
 "colorTabs.titleLabel": true,
@@ -166,7 +166,7 @@ Here is my configuration:
 
 you can replace `".*spec.*"` with the prefix used by your test suite. It is also possible to declare multiple patterns by adding multiple JSON objects with these fields:
 
-```
+```json
 {
   "regex": "...",
   "color": "..."
@@ -177,7 +177,7 @@ you can replace `".*spec.*"` with the prefix used by your test suite. It is also
 
 ![Switch to test](/images/blog/vscode/switch_to_test.webp)
 
-[Switch to test](https://marketplace.visualstudio.com/items?itemName=eskimoblood.create-test) is a useful extension that allows you to quickly create a test file and switch between a file and its corresponding test file. For example, if your source file is located at `app/services/awesome/service/file.rb`, your test file will be created at `spec/services/awesome/service/file_test.rb`.
+[Switch to test](https://marketplace.visualstudio.com/items?itemName=eskimoblood.create-test) is a useful extension that allows you to quickly create a test file and switch between a file and its corresponding test file. For example, if your source file is located at `app/services/file.rb`, your test file will be created at `spec/services/file_test.rb`.
 
 Although this extension was not specifically developed for Ruby, but rather for Javascript and Typescript, it works well with Ruby by adjusting a few settings.
 
@@ -197,7 +197,8 @@ Here's my configuration for using it with Ruby and RSpec:
 ],
 ```
 
-the `testFileTemplate` takes an array of elements because each element is a newline. The `srcFolder` is used to ignore the `app` folder of the Ruby on Rails project, if we omit this setting then the extension will create the test file in `app/spec/services/awesome/service/file_test.rb` that would be wrong.
+the `testFileTemplate` takes an array of elements because each element is a newline that will be written as boilerplate in the new test created.
+The `srcFolder` is used to ignore the `app` folder of the Ruby on Rails project, if we omit this setting then the extension will create the test file in `app/spec/services/file_test.rb` that would be wrong.
 
 Now this extension gives you two commands you can run:
 - `Create test` that will instantly create the test, using the given template, for the file that is open at the moment or open the test file if it already exists (and is located in the right path)

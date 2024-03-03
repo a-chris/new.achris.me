@@ -16,13 +16,6 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
-
-url: "https://achris.me" # the base hostname & protocol for your site, e.g. https://example.com
-lang: "en_US"
-
-permalink: simple
-template_engine: erb
-
 # Other options you might want to investigate:
 #
 # base_path: "/" # the subpath of your site, e.g. /blog. If you set this option,
@@ -34,6 +27,13 @@ template_engine: erb
 # pagination:
 #   enabled: true
 
+
+url: "https://achris.me" # the base hostname & protocol for your site, e.g. https://example.com
+lang: "en_US"
+
+permalink: simple
+template_engine: erb
+
 collections:
   projects:
     output: true
@@ -41,6 +41,3 @@ collections:
     permalink: simple
     sort_by: order
     sort_direction: descending
-
-rougify:
-  theme: 'base16.dark'

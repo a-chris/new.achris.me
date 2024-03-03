@@ -3,13 +3,12 @@
   <head>
     <%= render "head", metadata: site.metadata, title: data.title %>
   </head>
-  <body class="<%= data.layout %> <%= data.page_class %>">
+
+  <body class="bg-gray-50 <%= data.layout %> <%= data.page_class %>">
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
-    <main class="container">
+    <main class="px-4 pb-24 flex justify-center">
       <%= yield %>
     </main>
   </body>
-
-  <%= render 'footer' %>
 </html>

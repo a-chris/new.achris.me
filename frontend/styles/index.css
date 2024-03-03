@@ -1,0 +1,25 @@
+/* If you need to add @import statements, do so up here */
+
+@import "jit-refresh.css"; /* triggers frontend rebuilds */
+
+@import "components/post.css";
+
+/* Set up Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  text-wrap: pretty;
+}
+
+*:not(pre):note(code):not(code span):not(pre span) {
+  font-family: "Fira Sans", sans-serif;
+}
+
+ul.custom li::before {
+  content: attr(data-icon);
+  /* Make slightly larger than the li font-size
+  but smaller than the li gap */
+  font-size: 1.25em;
+}

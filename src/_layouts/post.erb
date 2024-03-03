@@ -2,14 +2,12 @@
 layout: default
 ---
 
-<div class="post-page">
-  <div style="text-align:center;">
-    <h1 class="post-title"><%= data.title %></h1>
-  </div>
+<div class="prose md:prose-xl max-w-4xl">
+  <h1 class="text-center text-2xl lg:text-4xl"><%= data.title %></h1>
 
   <!-- AddToAny BEGIN -->
   <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin-bottom:2em;">
-    Spread the word on
+    <span class="hidden md:block">Spread the word on</span>
     <a class="a2a_button_x"></a>
     <a class="a2a_button_mastodon"></a>
     <a class="a2a_button_linkedin"></a>
@@ -23,7 +21,5 @@ layout: default
     <script async src="https://static.addtoany.com/menu/page.js"></script>
     <!-- AddToAny END -->
 
-  <section>
     <%= yield %>
-  </section>
 </div>

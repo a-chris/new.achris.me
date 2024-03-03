@@ -1,38 +1,49 @@
 ---
-layout: page_no_title
+layout: default
 title: Projects
 ---
 
-<div class="grid-container">
-  <% collections.projects.resources.each do |project| %>
-    <article class="project-article">
-      <header>
-        <a href="<%= project.relative_url %>">
-          <img src="<%= project.data.image %>">
-        </a>
-      </header>
-      <footer>
-        <div class="title-container">
-          <a class="project-title" href="<%= project.relative_url %>">
+<div class="max-w-6xl">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+    <% collections.projects.resources.each do |project| %>
+      <article class="card bg-base-100 drop-shadow-xl">
+        <figure><img class="aspect-video object-cover" src="<%= project.data.image %>" alt="Shoes" /></figure>
+        <div class="card-body p-4">
+          <%# TITLE %>
+          <h2 class="max-md:text-lg card-title">
             <%= project.data.title %>
-          </a>
-          <% if project.data.website %>
-            <a href="<%= project.data.website %>">
-              <img src="/images/common/link.svg" style="width:15px;margin:0 0 3px 8px;" />
-            </a>
-          <% end %>
-          <% if project.data.github %>
-            <a href="<%= project.data.github %>">
-              <img src="/images/contacts/github.svg" style="width:15px;margin:0 0 3px 8px;" />
-            </a>
-          <% end %>
-        </div>
-        <% project.data.technologies.map do |tech| %>
-          <span class="tag"><%= tech %></span>
-        <% end %>
-        <p><%= project.data.description %></p>
-      </footer>
-    </article>
-  <% end %>
-</div>
+            <!-- <a class="link-hover" href="<%= project.relative_url %>"> -->
+            <!-- </a> -->
+          </h2>
 
+          <%# TECHNOLOGIES %>
+          <div class="inline-flex flex-wrap space-x-2">
+            <% project.data.technologies.map do |tech| %>
+              <div class="badge badge-outline"><%= tech %></div>
+            <% end %>
+          </div>
+
+          <%# DESCRIPTION %>
+          <p><%= project.data.description %></p>
+
+          <%# ACTIONS %>
+          <div class="card-actions justify-end items-center">
+            <% if project.data.website %>
+              <a class="btn bg-blue-100 hover:bg-blue-300 text-lg flex space-x-1" href="<%= project.data.website %>">
+                <span>Link</span>
+                <img src="/images/common/link.svg" style="width:15px;" />
+              </a>
+            <% end %>
+
+            <% if project.data.github %>
+              <a class="btn text-lg flex space-x-1" href="<%= project.data.website %>">
+                <span>GitHub</span>
+                <img src="/images/contacts/github.svg" style="width:15px;" />
+              </a>
+            <% end %>
+          </div>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</div>
