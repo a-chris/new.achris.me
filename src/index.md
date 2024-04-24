@@ -4,9 +4,6 @@ layout: intro
 
 **Hi there! Welcome to my website.** I'm Christian, a software developer from Italy 🇮🇹🍝🍕
 
-
-I'm truly enthusiastic about technology in all its forms. I enjoy exploring new languages and frameworks, enhancing performance, and solving real-world problems that impact people.
-
 I've been coding since the age of 15, and I'm truly enthusiastic about technology in all its forms. I enjoy exploring new languages and frameworks, enhancing performance, and solving real-world problems that impact people.
 
 In my free time, I love building software for personal projects and engaging in small DIY endeavors. I also enjoy reading books on software development and philosophical works, influenced by my background in humanism.

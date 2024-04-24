@@ -23,3 +23,9 @@ ul.custom li::before {
   but smaller than the li gap */
   font-size: 1.25em;
 }
+
+.prose {
+  img {
+    border-radius: 0.4em;
+  }
+}
