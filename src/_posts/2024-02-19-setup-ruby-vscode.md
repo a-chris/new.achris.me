@@ -106,6 +106,13 @@ So, it has its pros and is going to the right direction, this will probably be t
   </div>
 </div>
 
+## Endwise
+
+![Endwise](/images/blog/vscode/endwise.png)
+
+[Endwise](https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise) is a very handy extention that automatically adds `end` when required, for example if you type a new line after declaring a method or a block.
+It requires zero configurations, just install it and it will works for Ruby files.
+
 ## Ruby Interpolation Autocomplete
 
 ![RubyInterpolationAutocomplete](/images/blog/vscode/ruby_int_compl.webp)
@@ -230,12 +237,34 @@ gem install ripper-tags
 
 Now you can see the source code of a method by looking for its definition or you can open the full source code of an installed gem by running the `Bust-A-Gem: Open Gem...` command in Visual Studio Code.
 
-## Endwise
+## Highlight: Enhance Code Visibility
 
-![Endwise](/images/blog/vscode/endwise.png)
+![Highlight](/images/blog/vscode/highlight.webp)
 
-[Endwise](https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise) is a very handy extention that automatically adds `end` when required, for example if you type a new line after declaring a method or a block.
-It requires zero configurations, just install it and it will works for Ruby files.
+[Highlight](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight), as the name suggests, emphasizes specific parts of the code. It typically comes with predefined rules to highlight common annotations like TODOs, FIXMEs, and other types of comments in the code. However, it also allows us to define custom rules to highlight any section of the code we prefer.
+
+To highlight Ruby syntax in ERB views, we can add a new rule in the VSCode JSON settings:
+
+```json
+"highlight.regexFlags": "gi",
+"highlight.regexes": {
+  "(<%(?!#)[\\s\\S]*?% >)": {
+    "decorations": [
+      {
+        "backgroundColor": "#f0d8021c",
+      }
+    ]
+  },
+}
+```
+{: #unsupported-regexp }
+
+
+This setting will apply a distinctive background color to Ruby syntax within ERB views, making it stand out for easier identification and understanding.
+
+![Highlight](/images/blog/vscode/highlight_erb.webp)
+
+The extension offers various methods to highlight specific sections of the code, such as using different font weights, text colors, background colors, etc. I recommend referring to the extension page for detailed documentation on these features.
 
 ## Tailwind CSS
 
@@ -274,35 +303,6 @@ will open the `_report_item.html.erb` file.
 This extension requires no configuration however I noticed it conflicts with Solargraph sometimes so it leads to the definition of a method instead of the partial file. Anyway, I put it on the list because you may find it useful, depending on your project setup.
 
 # VS Code Settings
-
-## Highlight: Enhance Code Visibility
-
-![Highlight](/images/blog/vscode/highlight.webp)
-
-[Highlight](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight), as the name suggests, emphasizes specific parts of the code. It typically comes with predefined rules to highlight common annotations like TODOs, FIXMEs, and other types of comments in the code. However, it also allows us to define custom rules to highlight any section of the code we prefer.
-
-To highlight Ruby syntax in ERB views, we can add a new rule in the VSCode JSON settings:
-
-```json
-"highlight.regexFlags": "gi",
-"highlight.regexes": {
-  "(<%(?!#)[\\s\\S]*?% >)": {
-    "decorations": [
-      {
-        "backgroundColor": "#f0d8021c",
-      }
-    ]
-  },
-}
-```
-{: #unsupported-regexp }
-
-
-This setting will apply a distinctive background color to Ruby syntax within ERB views, making it stand out for easier identification and understanding.
-
-![Highlight](/images/blog/vscode/highlight_erb.webp)
-
-The extension offers various methods to highlight specific sections of the code, such as using different font weights, text colors, background colors, etc. I recommend referring to the extension page for detailed documentation on these features.
 
 ## Sticky Scroll
 
