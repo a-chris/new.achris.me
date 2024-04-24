@@ -275,6 +275,35 @@ This extension requires no configuration however I noticed it conflicts with Sol
 
 # VS Code Settings
 
+## Highlight: Enhance Code Visibility
+
+![Highlight](/images/blog/vscode/highlight.webp)
+
+[Highlight](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight), as the name suggests, emphasizes specific parts of the code. It typically comes with predefined rules to highlight common annotations like TODOs, FIXMEs, and other types of comments in the code. However, it also allows us to define custom rules to highlight any section of the code we prefer.
+
+To highlight Ruby syntax in ERB views, we can add a new rule in the VSCode JSON settings:
+
+```json
+"highlight.regexFlags": "gi",
+"highlight.regexes": {
+  "(<%(?!#)[\\s\\S]*?% >)": {
+    "decorations": [
+      {
+        "backgroundColor": "#f0d8021c",
+      }
+    ]
+  },
+}
+```
+{: #unsupported-regexp }
+
+
+This setting will apply a distinctive background color to Ruby syntax within ERB views, making it stand out for easier identification and understanding.
+
+![Highlight](/images/blog/vscode/highlight_erb.webp)
+
+The extension offers various methods to highlight specific sections of the code, such as using different font weights, text colors, background colors, etc. I recommend referring to the extension page for detailed documentation on these features.
+
 ## Sticky Scroll
 
 This is not a VS Code extension but a brand new feature of the editor. It makes the classname and method name to become sticky (stay on top) even while scrolling down, so we always know which method we are reading.
@@ -311,3 +340,9 @@ That's all at the moment 🙂
 I periodically update this post when I discover new extentions or useful settings, for example the Sticky Scroll one has been added only in mid-2023!
 
 I hope you guys enjoyed this post, if you have any extension or setting fo suggest just reach out to me on Twitter or Mastodon I will be happy to give you the credits 🥰
+
+<script>
+  let regexp = document.querySelector("#unsupported-regexp")
+  regexp.innerHTML =  regexp.innerHTML.replace("*?% ", "*?%")
+  // regexp.innerText = regexp.innerText.replace("*?% ", "*?%")
+</script>
