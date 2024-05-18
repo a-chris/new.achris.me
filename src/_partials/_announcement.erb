@@ -1,0 +1,59 @@
+<div id="alert" class="max-w-5xl lg:px-16 m-auto" style="display:none;">
+  <div class="text-center py-4 lg:px-4">
+    <div class="p-4 lg:px-8 bg-indigo-800 items-center text-indigo-100 leading-none rounded-xl lg:rounded-full flex lg:inline-flex" role="alert">
+      <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-2 lg:mr-8">New</span>
+
+      <div class="text-left mr-2 space-y-2">
+        <p class="font-semibold flex-auto">
+          Looking for a better job?
+        </p>
+        <p class="flex-auto">
+          I'm launching a CV Review service for just $5!
+        </p>
+        <p>
+          <a href="https://cvmate.online" class="underline">Learn more</a>.
+        </p>
+      </div>
+
+      <button id="alert-close-btn" class="btn btn-sm btn-ghost btn-square ml-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    const alertBox = document.getElementById('alert');
+    const closeBtn = document.getElementById('alert-close-btn');
+
+    if (getCookie('alertClosed') === 'true') {
+      alertBox.style.display = 'none';
+    } else {
+      alertBox.style.display = 'block';
+    }
+
+    closeBtn.addEventListener('click', function() {
+      alertBox.style.display = 'none';
+      setCookie('alertClosed', 'true', 14); // Set cookie to expire in 14 days
+    });
+  });
+</script>
