@@ -25,21 +25,28 @@ contacts:
     name: Linkedin
 
 timeline:
+  - title: Prima
+    period: May 2024 - current
+    url: https://www.prima.it
+    description:
+    - Elixir Software Engineer
+    - More to come, stay tuned :)
   - title: ACME Corp
     period: Nov 2023 - current
     url: https://acmecorp.dev
     description:
-    - Coney.app, personal finance platform
-    - tiTrovo.casa, house hunting solution
+    - Disco.rocks, Music Alert System
+    - Coney.app, Personal Finance Platform
+    - tiTrovo.casa, House Hunting Solution
   - title: Extendi
-    period: Mar 2021 - current
+    period: Mar 2021 - May 2024
     url: https://www.extendi.it
     description:
     - Backend Team Leader
     - Ruby on Rails Fullstack Developer
     - Sidekiq at a scale
-    - AWS, Docker, CI/CD
     - Microservices infrastructure
+    - AWS, Docker, CI/CD
   - title: Lab51 Agency
     period: Oct 2020 - Mar 2021
     description:
