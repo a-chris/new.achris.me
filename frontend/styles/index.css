@@ -1,6 +1,7 @@
 /* If you need to add @import statements, do so up here */
 
-@import "jit-refresh.css"; /* triggers frontend rebuilds */
+@import "jit-refresh.css";
+/* triggers frontend rebuilds */
 
 @import "components/post.css";
 
