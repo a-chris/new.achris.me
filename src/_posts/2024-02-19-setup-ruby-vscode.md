@@ -237,6 +237,20 @@ gem install ripper-tags
 
 Now you can see the source code of a method by looking for its definition or you can open the full source code of an installed gem by running the `Bust-A-Gem: Open Gem...` command in Visual Studio Code.
 
+## Mogami
+
+![Mogami](/images/blog/vscode/mogami.webp)
+
+I’m pretty sure you’ve never heard of this extension, but once you do, you’ll want to install it right away!
+
+[Mogami](https://marketplace.visualstudio.com/items?itemName=ninoseki.vscode-mogami) is a powerful VS Code extension that helps you instantly check the latest versions of your dependencies in your Gemfile.
+
+With Mogami, you can easily track if you’re using the most up-to-date versions of your dependencies, or if you’re missing crucial updates. It’s super intuitive, thanks to the color-coded circles:
+
+	•	🟢 Green: You’re up to date!
+	•	🟡 Yellow: There’s a newer version available.
+	•	🔴 Red: You’re way behind!
+
 ## Highlight: Enhance Code Visibility
 
 ![Highlight](/images/blog/vscode/highlight.webp)

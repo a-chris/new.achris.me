@@ -17,9 +17,11 @@ title: Posts
               </a>
             </h2>
             <p><%= post.data.description %></p>
-            <!-- <div class="card-actions justify-end">
-              <button class="btn btn-primary">Watch</button>
-            </div> -->
+            <p class="text-sm text-gray-600">
+              <relative-time datetime="<%= post.data.date.iso8601 %>">
+                <%= post.data.date.strftime("%d %B %Y") %>
+              </relative-time>
+            </p>
           </div>
       </article>
     <% end %>

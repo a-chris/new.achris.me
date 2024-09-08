@@ -1,21 +1,21 @@
 ---
 layout: post
-title:  What I Learned by Running a SaaS with Ruby on Rails
+title:  "Inside SaaS: Running a SaaS with Ruby on Rails"
 date:   2024-08-16 9:08:42 +0200
 categories: posts
 image: /images/blog/spongebob.jpg
-description: My real-world experience running a SaaS with Ruby on Rails, PostgreSQL, GoodJob, TailwindCSS, AlpineJS, and more. The good, the bad, and the lessons learned along the way.
+description: My experience with running a SaaS with Ruby on Rails, PostgreSQL, GoodJob, TailwindCSS, AlpineJS, and more. The pros, cons, and the lessons learned along the way.
 ---
 
-This is the first episode of a series of posts where I will share my experience running a SaaS business. Today, I will focus on the more technical aspects, discussing the good and the bad of using Ruby and Ruby on Rails in a production environment, and sharing some tips and tricks I’ve learned along the way.
+This is the first episode of *Inside SaaS*, where I share my experience running a SaaS business. Today, we’ll dive into the technical side of using Ruby on Rails in production—its strengths, weaknesses, and a few lessons I've picked up along the way.
 
-Ruby on Rails might not be the trendiest framework anymore, but it’s still a powerful tool. If you’re a developer considering Rails, or just curious about what it’s like to use it in a production SaaS environment, here’s what I’ve learned.
+While Ruby on Rails might not be the hottest framework, it's still a powerful tool for developers. If you’re considering Rails or just curious about using it in a SaaS environment, here’s what I’ve learned after 3.5 years of working with it.
 
 **A bit of background**
 
-If this is your first time on this website, I’ve been a full-stack software developer for six years now, with 3.5 years of experience working with Ruby on Rails. Over this time, I’ve used Rails to build REST and GraphQL APIs for some major businesses in both monolith and microservices architectures. At the same time, I’ve also used it as a full-stack framework for my side businesses. Rails has been my go-to for a variety of projects, and through those experiences, I’ve learned a lot—especially while running my own SaaS.
+I started my SaaS journey in November 2023, building on my full-stack development experience. Having run several open-source projects since 2021, this was my first time charging for a service. Today’s post will focus on how Ruby on Rails helped me navigate the technical challenges of running a SaaS.
 
-My journey in SaaS development started in November 2023. I’ve had a few other open-source or free web services running since 2021, but this was the first time I decided to charge for a service. I started with a simple MVP and iterated over it, adding new features and fixing bugs as I went. I’ve learned a lot about what it takes to run a SaaS business, from marketing and customer support to development and infrastructure. But today, I want to focus on the technical side of things.
+So far, I’ve built three SaaS products:
 
 <div class="space-y-4">
   <div class="card card-compact card-bordered bg-white cursor-pointer border-2 hover:border-gray-300" onclick="window.open('https://coney.app', '_blank');">
@@ -27,7 +27,7 @@ My journey in SaaS development started in November 2023. I’ve had a few other 
             <h4 class="card-title !text-2xl !mt-0">Coney.app</h4>
           </a>
           <p class="text-muted !text-lg !m-0">Simplifying Personal Finance</p>
-          <p class="text-muted text-sm !m-0">Share expenses with others, sync to Google Sheets, manage your budgets and track recurring costs!</p>
+          <p class="text-muted text-sm !m-0">Share expenses with others, sync to Google Sheets, manage budgets and track recurring costs!</p>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@ My journey in SaaS development started in November 2023. I’ve had a few other 
             <h4 class="card-title !text-2xl !mt-0">Disco.Rocks</h4>
           </a>
           <p class="text-muted !text-lg !m-0">Your music alert system</p>
-          <p class="text-muted text-sm !m-0">Get notified when disc or vinyl records matching your criteria go on sale.</p>
+          <p class="text-muted text-sm !m-0">Get notified when vinyl records or discs matching your criteria go on sale.</p>
         </div>
       </div>
     </div>
@@ -56,8 +56,8 @@ My journey in SaaS development started in November 2023. I’ve had a few other 
           <a href="https://titrovo.casa" target="_blank" class="block">
             <h4 class="card-title !text-2xl !mt-0">tiTrovo.casa</h4>
           </a>
-          <p class="text-muted !text-lg !m-0">Your simplest solution for finding houses to rent or buy in Italy</p>
-          <p class="text-muted text-sm !m-0">Receive notifications when a listing that matches your preferences is posted.</p>
+          <p class="text-muted !text-lg !m-0">The simplest solution for finding your dream house in Italy</p>
+          <p class="text-muted text-sm !m-0">Receive notifications when houses that fit your preferences are listed for rent or purchase.</p>
         </div>
       </div>
     </div>
@@ -193,7 +193,7 @@ Apart from that, I prefer using AlpineJS for every other JS or client-side inter
 
 ### Chart.js and Chartkick: The Struggles
 
-<img lazy src="https://i.imgflip.com/30q1jt.png" class="m-auto">
+<img lazy src="https://i.imgflip.com/30q1jt.png" class="m-auto max-h-96">
 
 Chart.js is powerful but a bit of a headache. The documentation is like a puzzle and has very few examples. It’s even worse if you compare it to other libraries like Recharts. However, I used it with Chartkick, which also led to endless customization battles. I found myself writing custom plugins to work around limitations.
 
@@ -201,11 +201,11 @@ I don’t see how Chartkick can be useful in a real-world application. It’s to
 
 I calculated that while working on Coney.app, which is a personal finance website with several charts and statistics, a good 20% of my time was spent fighting with Chartkick and Chart.js.
 
-### Not having strong types can hurt
+### Not having strong types
 
-I’ve worked with interpreted languages for most of my career. I really appreciate Ruby and also JavaScript (`1 + "2"` go brrr), and I can build things at the speed of light with them (cannot say the same for Python though). However, I have to write way more tests. Several times I thought, “it’s ok, I don’t see how a bug can happen here,” then the JavaScript doesn’t load properly on the frontend and I get a 500 error when submitting the form. Just to name one of the most sketchy bugs I’ve encountered.
+I've worked with interpreted languages for most of my career. I really appreciate Ruby and JavaScript (`1 + "2"` anyone?) as I can build things at lightning speed with them (though I can’t say the same for Python). However, I find myself needing to write way more tests. There have been plenty of times where I thought, "It’s fine, no bugs can happen here," only to have JavaScript fail to load on the frontend or encounter a 500 error when submitting a form—just one of many sketchy bugs I've faced.
 
-Hard lesson learned: this is a critical problem for B2C applications, where a bug can lead to a loss of money or trust. I need to write more tests and be more careful with my code.
+Hard lesson learned: This is a critical issue for B2C applications, where a single bug can result in lost money or trust. I need to be more diligent with testing and careful with my code.
 
 ### Finding a Good Vanilla JS Library for Advanced Select Components
 

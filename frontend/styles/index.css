@@ -25,7 +25,7 @@ ul.custom li::before {
   font-size: 1.25em;
 }
 
-.prose {
+.post.prose {
   img {
     border-radius: 0.4em;
   }
