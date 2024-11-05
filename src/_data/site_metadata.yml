@@ -25,43 +25,43 @@ contacts:
     name: Linkedin
 
 timeline:
-  - title: Prima
+  - title: Prima Assicurazioni
     period: May 2024 - current
     url: https://www.prima.it
     description:
-    - Elixir Software Engineer
-    - More to come, stay tuned :)
-  - title: ACME Corp
+      - Elixir Software Engineer
+      - Rust Software Engineer
+  - title: ACME Corp (Freelance)
     period: Nov 2023 - current
     url: https://acmecorp.dev
     description:
-    - Disco.rocks, Music Alert System
-    - Coney.app, Personal Finance Platform
-    - tiTrovo.casa, House Hunting Solution
+      - Coney.app, Personal Finance Platform
+      - Disco.rocks Music Alert System
+      - tiTrovo.casa, House Hunting Solution
   - title: Extendi
     period: Mar 2021 - May 2024
     url: https://www.extendi.it
     description:
-    - Backend Team Leader
-    - Ruby on Rails Fullstack Developer
-    - Sidekiq at a scale
-    - Microservices infrastructure
-    - AWS, Docker, CI/CD
+      - Backend Team Leader
+      - Ruby on Rails Fullstack Developer
+      - Sidekiq at a scale
+      - Microservices infrastructure
+      - AWS, Docker, CI/CD
   - title: Lab51 Agency
     period: Oct 2020 - Mar 2021
     description:
-    - Full-Stack Developer (ExpressJS, NextJS, React)
-    - AWS, Docker
+      - Full-Stack Developer (ExpressJS, NextJS, React)
+      - AWS, Docker
   - title: Mango Mobile Agency
     period: Feb 2019 - Oct 2020
     description:
-    - Full-Stack Developer (Spring Boot, React)
-    - Mobile Android Developer (Java, Kotlin)
-    - DevOps responsible for CI/CD infrastructure and Linux VPS
+      - Full-Stack Developer (Spring Boot, React)
+      - Mobile Android Developer (Java, Kotlin)
+      - DevOps responsible for CI/CD infrastructure and Linux VPS
   - title: Bachelor Degree in Engineering & Computer Science
     period: Oct 2015 - Mar 2019
     description:
-    - University of Bologna
+      - University of Bologna
 
 skills:
   - title: backend
@@ -86,44 +86,44 @@ skills:
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     list:
-    - name: Javascript
-      num: 90
-    - name: React
-      num: 80
-    - name: NextJS
-      num: 80
+      - name: Javascript
+        num: 90
+      - name: React
+        num: 80
+      - name: NextJS
+        num: 80
   - title: data
     image: database.webp
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     list:
-    - name: PostgreSQL
-      num: 90
-    - name: Redis
-      num: 90
-    - name: MySQL/MariaDB
-      num: 80
-    - name: SQLite
-      num: 80
-    - name: MongoDB
-      num: 70
-    - name: Neo4J
-      num: 60
+      - name: PostgreSQL
+        num: 90
+      - name: Redis
+        num: 90
+      - name: MySQL/MariaDB
+        num: 80
+      - name: SQLite
+        num: 80
+      - name: MongoDB
+        num: 70
+      - name: Neo4J
+        num: 60
   - title: automation
     image: automation.webp
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     list:
-    - name: Docker
-      num: 90
-    - name: Scripting
-      num: 90
-    - name: Telegram Bot
-      num: 90
-    - name: Continuous Delivery
-      num: 80
-    - name: Continuous Integration
-      num: 80
+      - name: Docker
+        num: 90
+      - name: Scripting
+        num: 90
+      - name: Telegram Bot
+        num: 90
+      - name: Continuous Delivery
+        num: 80
+      - name: Continuous Integration
+        num: 80
 
 languages:
   - Ruby

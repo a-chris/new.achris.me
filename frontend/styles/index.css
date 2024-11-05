@@ -30,3 +30,16 @@ ul.custom li::before {
     border-radius: 0.4em;
   }
 }
+
+@layer components {
+
+  .btn {
+    @apply shadow-none;
+    @apply outline-none;
+    @apply border-none;
+  }
+
+  .badge-ghost {
+    @apply bg-slate-50;
+  }
+}
