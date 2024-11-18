@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  Best Visual Studio Code extensions and settings for Ruby and Rails
-date:   2024-04-24 9:08:42 +0200
+date:   2024-09-19 9:08:42 +0200
 categories: posts
 image: /images/blog/ruby-vscode.png
 description: Best Visual Studio Code extensions and settings to work with Ruby and Ruby on Rails and bring several RubyMine features.
 ---
 
-I've been using Ruby for three years and Visual Studio Code has been my preferred IDE since day one. Coming from a Java background, I initially tried using RubyMine: it had several feature I was missing on VS Code but it was resource-expensive and I didn't like the UI (I know it has improved recently).
+I've been coding in Ruby for three years and Visual Studio Code has been my preferred IDE since day one. Coming from a Java background, I initially tried using RubyMine: it had a lot of features but, as you might know, it was resource-expensive and I didn't like the UI (I heard it has improved recently).
 
 **This led me to seek out the best VS Code extentions and settings to work with Ruby (and Ruby on Rails) to brings some of the RubyMine features I was missing.**
 
@@ -21,13 +21,47 @@ First we go with [Copy Ruby Reference](https://marketplace.visualstudio.com/item
 
 ![CopyRubyReference](/images/blog/vscode/ruby_reference.webp)
 
-So you will get `Strategies::..:Fetchers::Unnotified` in your clipboard, ready to be pasted and used in your code.
+So you will get the complete Class name such as`Strategies::..:Fetchers::Unnotified` in your clipboard, ready to be pasted and used in your code.
+
+## Ruby LSP (Nov 2024 Updated)
+
+![RubyLSP](/images/blog/vscode/ruby_lsp.webp)
+
+As of 2024, [Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp) has become the officially recommended extension for Ruby in [VS Code docs](https://code.visualstudio.com/docs/languages/ruby). When I first tried it earlier this year, I’ll admit I wasn’t impressed. Suggestions were sparse, and it felt almost useless.
+
+But! Things have dramatically improved over the past months. Ruby LSP is now my go-to extension for Ruby development in VS Code. Let’s dive into why it stands out.
+
+Pro:
+- Easy to install. It does it all by itself, no need to run `gem install solargraph` or whatever.
+- It also replaces **rubocop** as formatter if well configured
+- It can use **rbenv** by default with `"rubyLsp.rubyVersionManager": "rbenv"`
+- Faster than the old Ruby extension
+- Debugging and breakpoints out of the box, to be honest I did not test this feature since I've always preferred **byebug** but it could be really appreciated if you come from RubyMine
+- Extendibile features like [ruby-lsp-rails](https://github.com/Shopify/ruby-lsp-rails) and [ruby-lsp-rspec](https://github.com/st0012/ruby-lsp-rspec).
+
+Cons:
+- 🚀
+
+A Former Con, Now Fixed:
+- Previously, every `Gemfile.lock` change triggered an annoying popup and slowed down the system. This seems resolved now, as I haven’t noticed any slowdown lately.
+
+Thanks to the dedication of Shopify and open-source contributors, **Ruby LSP has evolved into the long-awaited LSP for Ruby developers.** I wholeheartedly recommend it!
+
+<div style="border-radius:6px;padding:1em;background-color:rgba(52,183,67,.12);display:flex;margin:3em 0;">
+  <div style="padding-right:1em;font-size:x-large;">💡</div>
+  <div>
+    I wrote a more in-depth comparison between
+    <a href="/posts/solargraph-vs-ruby-lsp">Solargraph and Ruby LSP.</a>
+  </div>
+</div>
 
 ## Solargraph
 
 ![Solargraph](/images/blog/vscode/solargraph.webp)
 
-Solargraph is an essential extension for working with Ruby, as it allows VS Code to understand your code and provide helpful features like intellisense, code completion, and inline documentation.
+For years, Solargraph was the go-to LSP extension for Ruby in VS Code. It provided essential features like IntelliSense, code completion, and inline documentation.
+
+**However, as of 2024, Ruby LSP has taken the lead with more features and effortless setup.** That said, if you’re already using Solargraph and it works well for you, you can stick with it. Below are tips for setting up and maximizing its capabilities.
 
 If you have already installed and configured Solargraph then you can jump to the tip section, otherwise follow the steps to install it.
 
@@ -77,34 +111,6 @@ now, download the gems documentation and RBS files with
 ```
 
 These two lines ensure your project's dependencies are analyzed, the gems are documented, and get a chance to have intellisense.
-
-## Ruby LSP
-
-![RubyLSP](/images/blog/vscode/ruby_lsp.webp)
-
-[Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp) is the new suggested extension to work with Ruby by the [VS Code docs](https://code.visualstudio.com/docs/languages/ruby). I must admit I was full of hope when I first went to install it but it was a bit delusional. Don't get me wrong, it must be hard to work with a magic language like Ruby but this extension is not ready to fully replace Solargraph.
-
-Pro:
-- Easy to install. It does it all by itself, no need to run `gem install solargraph` or whatever.
-- It also replaces **rubocop** as formatter if well configured
-- It can use **rbenv** by default with `"rubyLsp.rubyVersionManager": "rbenv"`
-- Faster than the old Ruby extension
-- Debugging and breakpoints out of the box, to be honest I did not test this feature since I'm a heady **byebug** user but it could be really appreciated if you come from RubyMine
-
-Cons:
-- I do not see any suggestion while writing code, like at all
-- The `Go to definition` also, `cmd+click`, sometimes do not work
-- Every time you change the **Gemfile.lock** a popup appears on the bottom-right of VS Code to update the gems/documentation/whatever_it_is_doing, it could be annoying if you have many gems and it slow down your machine
-
-So, it has its pros and is going to the right direction, this will probably be the future of Ruby on VS Code but at the moment it does not offer any life-changing feature while having some annoying downturns. It's up to you whether to use it or not, give it a chance and let me know what you think.
-
-<div style="border-radius:6px;padding:1em;background-color:rgba(52,183,67,.12);display:flex;margin:3em 0;">
-  <div style="padding-right:1em;font-size:x-large;">💡</div>
-  <div>
-    I wrote a more in-depth comparison between
-    <a href="/posts/solargraph-vs-ruby-lsp">Solargraph and Ruby LSP.</a>
-  </div>
-</div>
 
 ## Endwise
 
@@ -348,10 +354,35 @@ Here's the line you should add to the JSON settings to make Emmet works with ERB
 
 Emmet comes with VS Code, no need to install any particular extension.
 
+# Bash Aliases
+
+## Quickly find existing routes in Rails
+
+A while back, someone shared an ingenious one-liner on Twitter that uses `fzf` to create an interactive shell for filtering the existing routes in your Rails application. It’s been a game-changer for me, and I’m excited to share it with you!
+
+![fzf Routes](/images/blog/vscode/routes.gif)
+
+To make this alias available, simply add the following line to your .bashrc or .zshrc file:
+
+```bash
+alias routes="bin/rails routes | fzf -e"
+```
+
+and don't forget to reload your shell, you fool!
+
+```bash
+exec $SHELL
+```
+
+Once set up, typing routes in your terminal will open an interactive list of routes for your Rails app, making navigation and filtering a breeze.
+
+If you’re the brilliant mind who shared this hack on Twitter, please reach out to me! I’d be more than happy to credit your tweet and give you the recognition you deserve. 🙌
+
 ---
 
 That's all at the moment 🙂
-I periodically update this post when I discover new extentions or useful settings, for example the Sticky Scroll one has been added only in mid-2023!
+
+I periodically update this post when I discover new extentions or useful settings, last review was in November 2024!
 
 I hope you guys enjoyed this post, if you have any extension or setting fo suggest just reach out to me on Twitter or Mastodon I will be happy to give you the credits 🥰
 
