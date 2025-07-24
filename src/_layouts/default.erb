@@ -8,8 +8,6 @@
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
     <main class="px-4 pb-24 flex flex-col items-center justify-center">
-      <%= render "announcement" %>
-
       <%= yield %>
     </main>
   </body>
