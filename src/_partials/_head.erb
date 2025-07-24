@@ -7,7 +7,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
-<script defer data-domain="https://achris.me" src="https://faenz.achris.me/faenz.js"></script>
+<script>
+  window.goatcounter = {
+      path: function(p) { return location.host + p }
+  }
+</script>
+<script data-goatcounter="https://goat.achris.me/count" async src="//goat.achris.me/count.js"></script>
 <script src="<%= webpack_path :js %>" defer></script>
 
 <%= live_reload_dev_js %>
