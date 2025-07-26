@@ -4,10 +4,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-title: Christian Toscano
+title: A. Christian Toscano
 tagline: Backend Team Leader & Fullstack Developer
 description: >-
-  Christian Toscano - Backend Team Leader & Fullstack Developer. I write about technical stuff that I learn for my job and my side projects.
+  A. Christian Toscano - Backend Team Leader & Fullstack Developer. I write about technical stuff that I learn for my job and my side projects.
 author:
   twitter: achris_15
 twitter:
@@ -127,9 +127,8 @@ skills:
 
 languages:
   - Ruby
+  - Go
   - Javascript
   - Typescript
-  - Kotlin
-  - Java
-  - Go
+  - Elixir
   - Python
