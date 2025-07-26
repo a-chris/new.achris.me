@@ -7,19 +7,19 @@
     "esbuild-dev": "node esbuild.config.js --watch"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "daisyui": "^4.7.2",
-    "esbuild": "^0.19.2",
-    "glob": "^10.3.3",
-    "postcss": "^8.4.29",
+    "@tailwindcss/typography": "^0.5.16",
+    "daisyui": "^4.12.24",
+    "esbuild": "^0.19.12",
+    "glob": "^10.4.5",
+    "postcss": "^8.5.6",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^15.1.0",
-    "postcss-load-config": "^4.0.1",
-    "postcss-preset-env": "^9.1.2",
+    "postcss-load-config": "^4.0.2",
+    "postcss-preset-env": "^9.6.0",
     "read-cache": "^1.0.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
-    "@github/relative-time-element": "^4.4.3"
+    "@github/relative-time-element": "^4.4.8"
   }
 }
