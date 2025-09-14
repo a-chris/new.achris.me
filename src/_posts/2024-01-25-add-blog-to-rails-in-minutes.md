@@ -3,7 +3,7 @@ layout: post
 title: Integrating a Blog section to your Rails app using Markdown in minutes
 date:   2024-01-25 13:08:42 +0200
 categories: posts
-image: /images/blog/add-blog-to-rails-in-minutes/workflow.png
+image: /images/blog/add-blog-to-rails-in-minutes/landing.webp
 description: A tutorial on seamlessly integrating a Markdown-based blog section into your Rails app that I used on my projects.
 ---
 
@@ -17,7 +17,7 @@ The idea is to create articles quickly using Markdown, a user-friendly and famil
 
 A functional blog section should have an index page listing all available articles, each with its title, description, images, and additional information. Clicking on an article should smoothly transition the user to the dedicated article page, styled with our custom CSS. For a modern touch, we might even consider adding share buttons at the end.
 
-![Blog Workflow](/images/blog/add-blog-to-rails-in-minutes/workflow.png)
+![Blog Workflow](/images/blog/add-blog-to-rails-in-minutes/landing.webp)
 
 ## Tools of the Trade
 

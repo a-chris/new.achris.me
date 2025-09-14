@@ -3,7 +3,7 @@ layout: post
 title:  "Inside SaaS: Running a SaaS with Ruby on Rails"
 date:   2024-08-16 9:08:42 +0200
 categories: posts
-image: /images/blog/spongebob.jpg
+image: /images/blog/inside-saas/landing.webp
 description: My experience with running a SaaS with Ruby on Rails, PostgreSQL, GoodJob, TailwindCSS, AlpineJS, and more. The pros, cons, and the lessons learned along the way.
 ---
 

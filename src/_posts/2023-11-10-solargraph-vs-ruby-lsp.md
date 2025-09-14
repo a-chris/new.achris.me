@@ -3,7 +3,7 @@ layout: post
 title: "Solargraph vs Ruby LSP: which one to choose?"
 date:   2023-11-10 13:08:42 +0200
 categories: posts
-image: /images/blog/solargraph-rubylsp.png
+image: /images/blog/solargraph-vs-rubylsp/landing.webp
 description: A summary of the differences between Solargraph and Ruby LSP with pros and cons, the state of Ruby Language Servers and which one you should use.
 ---
 
@@ -92,7 +92,7 @@ Nonethless, if you like to use Ruby LSP, I discovered a workaround for older Rub
 ### Choosing Your Coding Companion
 
 <div>
-  <img src="/images/blog/solargraph-rubylsp.png" style="margin: auto;">
+  <img src="/images/blog/solargraph-vs-rubylsp/landing.webp" style="margin: auto;">
   <figcaption align="center">(just joking, the Ruby community is the best ♥️)</figcaption>
 </div>
 

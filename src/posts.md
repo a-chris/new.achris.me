@@ -8,7 +8,7 @@ title: Posts
     <% collections.posts.resources.each do |post| %>
       <article class="card lg:card-side bg-base-100 rounded-xl drop-shadow-lg">
           <figure class="p-2 max-lg:max-h-32 lg:max-w-60">
-            <img class="object-cover lg:aspect-[4/3] rounded-xl" src="<%= post.data.image %>" alt="<%= post.data.title %>"/>
+            <img loading="lazy" class="object-cover lg:aspect-[4/3] rounded-xl" src="<%= post.data.image %>" alt="<%= post.data.title %>"/>
           </figure>
           <div class="card-body p-4">
             <h2 class="max-md:text-lg card-title">

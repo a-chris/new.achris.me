@@ -3,7 +3,7 @@ layout: post
 title:  Best Visual Studio Code extensions and settings for Ruby and Rails
 date:   2024-11-18 9:08:42 +0200
 categories: posts
-image: /images/blog/ruby-vscode.png
+image: /images/blog/vscode/landing.webp
 description: Best Visual Studio Code extensions and settings to work with Ruby and Ruby on Rails and bring several RubyMine features.
 ---
 
