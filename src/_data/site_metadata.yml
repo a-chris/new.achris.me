@@ -25,20 +25,24 @@ contacts:
     name: Linkedin
 
 timeline:
-  - title: Prima Assicurazioni
-    period: May 2024 - current
+  - title: Qonto ✨
+    period: Aug 2025 - current
     url: https://www.prima.it
     description:
-      - Elixir Software Engineer
-      - Rust Software Engineer
-  - title: ACME Corp (Freelance)
-    period: Nov 2023 - current
+      - Ruby Developer
+  - title: Prima Assicurazioni 🚗
+    period: May 2024 - Aug 2025
+    url: https://www.prima.it
+    description:
+      - Elixir Developer
+  - title: ACME Corp 🦄
+    period: Nov 2023 - Aug 2025
     url: https://acmecorp.dev
     description:
       - Coney.app, Personal Finance Platform
-      - Disco.rocks Music Alert System
       - tiTrovo.casa, House Hunting Solution
-  - title: Extendi
+      - Much more..
+  - title: Extendi 🎸
     period: Mar 2021 - May 2024
     url: https://www.extendi.it
     description:

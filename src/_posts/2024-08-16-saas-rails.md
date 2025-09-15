@@ -32,36 +32,6 @@ So far, I’ve built three SaaS products:
       </div>
     </div>
   </div>
-
-  <div class="card card-compact card-bordered bg-white cursor-pointer border-2 hover:border-gray-300" onclick="window.open('https://disco.rocks', '_blank');">
-    <div class="card-body">
-      <div class="flex flex-row">
-        <img lazy src="https://disco.rocks/favicon.png" class="!my-auto size-12 md:size-20">
-        <div class="ml-4">
-          <a href="https://disco.rocks" target="_blank" class="block">
-            <h4 class="card-title !text-2xl !mt-0">Disco.Rocks</h4>
-          </a>
-          <p class="text-muted !text-lg !m-0">Your music alert system</p>
-          <p class="text-muted text-sm !m-0">Get notified when vinyl records or discs matching your criteria go on sale.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card card-compact card-bordered bg-white cursor-pointer border-2 hover:border-gray-300" onclick="window.open('https://titrovo.casa', '_blank');">
-    <div class="card-body">
-      <div class="flex flex-row">
-        <img lazy src="https://titrovo.casa/favicon.ico" class="!my-auto size-12 md:size-20">
-        <div class="ml-4">
-          <a href="https://titrovo.casa" target="_blank" class="block">
-            <h4 class="card-title !text-2xl !mt-0">tiTrovo.casa</h4>
-          </a>
-          <p class="text-muted !text-lg !m-0">The simplest solution for finding your dream house in Italy</p>
-          <p class="text-muted text-sm !m-0">Receive notifications when houses that fit your preferences are listed for rent or purchase.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 
