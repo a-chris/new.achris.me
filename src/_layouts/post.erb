@@ -13,12 +13,36 @@ layout: default
     <a class="a2a_button_telegram"></a>
     <a class="a2a_button_reddit"></a>
   </div>
-    <script>
-    var a2a_config = a2a_config || {};
-    a2a_config.num_services = 4;
-    </script>
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
-    <!-- AddToAny END -->
 
-    <%= yield %>
+  <script>
+  var a2a_config = a2a_config || {};
+  a2a_config.num_services = 4;
+  </script>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
+
+  <%= yield %>
+
+  <div class="space-y-4 mt-8">
+    <h4 class="text-secondary">Keep reading</h4>
+    <% collections.posts.resources.sample(3).each do |post| %>
+      <div class="space-y-2">
+        <div class="card card-compact card-bordered bg-white cursor-pointer border-2 hover:border-gray-300" onclick="window.open('https://coney.app', '_blank');">
+          <div class="card-body">
+            <div class="flex flex-row">
+              <img lazy src="<%= post.data.image %>" class="!my-auto object-cover size-12 md:size-20">
+              <div class="ml-4">
+                <a href="https://coney.app" target="_blank" class="block">
+                  <h4 class="card-title !text-xl !mt-0"><%= post.data.title %></h4>
+                </a>
+                <p class="text-muted !text-lg !m-0"><%= post.data.description.truncate(120) %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+
