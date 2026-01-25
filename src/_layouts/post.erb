@@ -1,12 +1,13 @@
----
-layout: default
----
+--- layout: default ---
 
 <div class="post prose max-w-4xl w-full">
   <h1 class="text-2xl lg:text-4xl"><%= data.title %></h1>
 
   <!-- AddToAny BEGIN -->
-  <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="margin-bottom:2em;">
+  <div
+    class="a2a_kit a2a_kit_size_32 a2a_default_style"
+    style="margin-bottom:2em;"
+  >
     <a class="a2a_button_x"></a>
     <a class="a2a_button_mastodon"></a>
     <a class="a2a_button_linkedin"></a>
@@ -18,7 +19,9 @@ layout: default
   var a2a_config = a2a_config || {};
   a2a_config.num_services = 4;
   </script>
+
   <script async src="https://static.addtoany.com/menu/page.js"></script>
+
   <!-- AddToAny END -->
 
   <%= yield %>
@@ -27,15 +30,28 @@ layout: default
     <h4 class="text-secondary">Keep reading</h4>
     <% collections.posts.resources.sample(3).each do |post| %>
       <div class="space-y-2">
-        <div class="card card-compact card-bordered bg-white cursor-pointer border-2 hover:border-gray-300">
+        <div
+          class="
+            card card-compact card-bordered bg-white cursor-pointer border-2
+            hover:border-gray-300
+          "
+        >
           <div class="card-body">
             <div class="flex flex-row">
-              <img lazy src="<%= post.data.image %>" class="!my-auto object-cover size-12 md:size-20">
+              <img
+                lazy
+                src="<%= post.data.image %>"
+                class="!my-auto object-cover size-12 md:size-20"
+              >
               <div class="ml-4">
                 <a href="<%= post.relative_url %>" class="block no-underline">
-                  <h4 class="font-medium text-xl m-0"><%= post.data.title %></h4>
+                  <h4 class="font-medium text-xl m-0">
+                    <%= post.data.title %>
+                  </h4>
                 </a>
-                <p class="text-muted !text-base !m-0"><%= post.data.description.truncate(160) %></p>
+                <p class="text-muted !text-base !m-0">
+                  <%= post.data.description.truncate(160) %>
+                </p>
               </div>
             </div>
           </div>
@@ -44,5 +60,3 @@ layout: default
     <% end %>
   </div>
 </div>
-
-

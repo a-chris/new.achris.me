@@ -1,23 +1,25 @@
----
-layout: default
----
+--- layout: default ---
 
 <div class="project-page">
-  <h1 class="project-title" style="margin:0;">
-    <%= data.title %>
-  </h1>
+  <h1 class="project-title" style="margin:0;"><%= data.title %></h1>
 
   <div class="project-links">
     <% if data.website %>
       <a href="<%= data.website %>">
         website
-        <img src="/images/common/link.svg" style="width:20px;margin:0 0 3px 8px;" />
+        <img
+          src="/images/common/link.svg"
+          style="width:20px;margin:0 0 3px 8px;"
+        />
       </a>
     <% end %>
     <% if data.github %>
       <a href="<%= data.github %>">
         GitHub
-        <img src="/images/contacts/github.svg" style="width:20px;margin:0 0 3px 8px;" />
+        <img
+          src="/images/contacts/github.svg"
+          style="width:20px;margin:0 0 3px 8px;"
+        />
       </a>
     <% end %>
   </div>
@@ -34,7 +36,5 @@ layout: default
     </section>
   <% end %>
 
-  <section>
-    <%= yield %>
-  </section>
+  <section><%= yield %></section>
 </div>

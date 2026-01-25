@@ -1,18 +1,32 @@
 <meta charset="utf-8" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <% resource_title = strip_html(strip_newlines(title)) %>
 
 <link rel="stylesheet" href="<%= webpack_path :css %>" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+  rel="stylesheet"
+>
 
 <script>
   window.goatcounter = {
       path: function(p) { return location.host + p }
   }
 </script>
-<script data-goatcounter="https://goat.achris.me/count" async src="//goat.achris.me/count.js"></script>
+
+<script
+  data-goatcounter="https://goat.achris.me/count"
+  async
+  src="//goat.achris.me/count.js"
+></script>
+
 <script src="<%= webpack_path :js %>" defer></script>
 
 <%= live_reload_dev_js %>
