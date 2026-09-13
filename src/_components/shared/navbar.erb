@@ -1,24 +1,25 @@
-<nav class="navbar bg-gray-50">
+<nav class="navbar bg-gray-50" aria-label="Main">
   <div class="navbar-start">
     <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a id="nav-home" class="py-4" href="<%= relative_url '/' %>">home</a></li>
-        <li><a id="nav-projects" class="py-4" href="<%= relative_url '/projects' %>">projects</a></li>
-        <li><a id="nav-posts" class="py-4" href="<%= relative_url '/posts' %>">tech stories</a></li>
+        <% nav_items.each do |label, path| %>
+          <li>
+            <a class="py-4" href="<%= relative_url path %>"<% if nav_active?(path) %> aria-current="page"<% end %>><%= label %></a>
+          </li>
+        <% end %>
       </ul>
     </div>
-    <a class="btn btn-ghost text-xl">
-      <%# LEFT LOGO %>
-    </a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 space-x-8">
-      <li><a id="nav-home" class="text-base" href="<%= relative_url '/' %>">home</a></li>
-      <li><a id="nav-projects" class="text-base" href="<%= relative_url '/projects' %>">projects</a></li>
-      <li><a id="nav-posts" class="text-base" href="<%= relative_url '/posts' %>">tech stories</a></li>
+      <% nav_items.each do |label, path| %>
+        <li>
+          <a class="text-base" href="<%= relative_url path %>"<% if nav_active?(path) %> aria-current="page"<% end %>><%= label %></a>
+        </li>
+      <% end %>
     </ul>
   </div>
   <div class="navbar-end"></div>
@@ -28,7 +29,7 @@
   <div class="flex items-center space-x-4 lg:space-x-8">
     <div class="avatar">
       <div class="w-20 lg:w-28 mask mask-squircle">
-        <img src="<%= relative_url '/images/avatar.webp' %>" />
+        <img src="<%= relative_url '/images/avatar.webp' %>" alt="A. Christian Toscano" />
       </div>
     </div>
 
@@ -40,8 +41,8 @@
       <%# CONTACTS %>
       <div class="flex space-x-4">
         <% @metadata.contacts.each do |c| %>
-          <a href="<%= c.url %>" data-tooltip="<%= c.name %>" class="link-hover">
-            <img src="/images/contacts/<%= c.name.downcase %>.svg" style="width:25px;"/>
+          <a href="<%= c.url %>" data-tooltip="<%= c.name %>" class="link-hover" aria-label="<%= c.name %>">
+            <img src="/images/contacts/<%= c.name.downcase %>.svg" style="width:25px;" alt="" />
           </a>
         <% end %>
       </div>
@@ -49,9 +50,3 @@
   </div>
 
 </header>
-
-<script>
-  const currPath = window.location.pathname.split('/')[1] || 'home'
-  document.querySelectorAll('nav > ul > li > a').forEach(e => e.classList.remove('current-page'))
-  document.getElementById(`nav-${currPath}`).classList.add('current-page');
-</script>

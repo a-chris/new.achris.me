@@ -14,8 +14,20 @@
   text-wrap: pretty;
 }
 
-*:not(pre):note(code):not(code span):not(pre span) {
-  font-family: "IBM Plex Sans", sans-serif;
+/* Keyboard focus has to stay visible. Tailwind's preflight leaves this to the
+   browser default, which drifts once buttons and links get restyled. */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* The navbar marks the current section with aria-current. Previously it set a
+   `.current-page` class from inline JS, on an element id duplicated between the
+   mobile and desktop menus, and no CSS ever defined that class. */
+.navbar [aria-current="page"] {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 ul.custom li::before {

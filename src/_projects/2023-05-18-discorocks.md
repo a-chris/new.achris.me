@@ -1,5 +1,6 @@
 ---
 layout: project
+order: 3
 title: DiscoRocks
 date: 2024-05-14 13:08:42 +0200
 image: /images/projects/discorocks.webp

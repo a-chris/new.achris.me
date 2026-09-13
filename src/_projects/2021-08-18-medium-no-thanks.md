@@ -1,5 +1,6 @@
 ---
 layout: project
+order: 7
 title: Medium No Thanks
 date: 2023-05-14 13:08:42 +0200
 image: /images/projects/mnt.webp
@@ -17,7 +18,6 @@ Medium No Thanks is an small Android application that allows you to read any Med
 😔 Sadly, the anoynmous navigation trick has been deprecated by Medium, so the application is not working anymore.
 </aside>
 
-
 ## How it works
 
 Find an article with paywall, click to share the article and select **Medium No Thanks** from the sharesheet.
@@ -29,4 +29,4 @@ Find an article with paywall, click to share the article and select **Medium No 
 
 ## What you can't do using this app
 
-* You won't be able to clap or comment any post, you can only read the article.
+- You won't be able to clap or comment any post, you can only read the article.

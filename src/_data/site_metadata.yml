@@ -1,13 +1,15 @@
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
+# you will see them accessed via {{ site.metadata.title }},
+# {{ site.metadata.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
 title: A. Christian Toscano
 tagline: Backend Team Leader & Fullstack Developer
 description: >-
-  A. Christian Toscano - Backend Team Leader & Fullstack Developer. I write about technical stuff that I learn for my job and my side projects.
+  A. Christian Toscano - Backend Team Leader & Fullstack Developer.
+  I write about technical stuff that I learn for my job and my side projects.
 author:
   twitter: achris_15
 twitter:
@@ -27,7 +29,7 @@ contacts:
 timeline:
   - title: Qonto ✨
     period: Aug 2025 - current
-    url: https://www.prima.it
+    url: https://qonto.com
     description:
       - Ruby Developer
   - title: Prima Assicurazioni 🚗
@@ -35,13 +37,6 @@ timeline:
     url: https://www.prima.it
     description:
       - Elixir Developer
-  - title: ACME Corp 🦄
-    period: Nov 2023 - Aug 2025
-    url: https://acmecorp.dev
-    description:
-      - Coney.app, Personal Finance Platform
-      - tiTrovo.casa, House Hunting Solution
-      - Much more..
   - title: Extendi 🎸
     period: Mar 2021 - May 2024
     url: https://www.extendi.it
@@ -66,68 +61,6 @@ timeline:
     period: Oct 2015 - Mar 2019
     description:
       - Engineering & Computer Science at University of Bologna
-
-skills:
-  - title: backend
-    image: backend.webp
-    description: >-
-      Throughout my career, university studies, and side projects, I've had the opportunity to work with a variety of frameworks and languages.
-      While Ruby on Rails is my preferred solution for web application development, I've also gained experience with ExpressJS, Spring Boot, and Django.
-      I've integrated many third-party APIs and built REST and GraphQL APIs used by clients worldwide.
-    list:
-      - name: Ruby on Rails
-        num: 100
-      - name: REST
-        num: 90
-      - name: GraphQL
-        num: 90
-      - name: ExpressJS
-        num: 80
-      - name: Spring
-        num: 70
-  - title: frontend
-    image: website.webp
-    description: >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    list:
-      - name: Javascript
-        num: 90
-      - name: React
-        num: 80
-      - name: NextJS
-        num: 80
-  - title: data
-    image: database.webp
-    description: >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    list:
-      - name: PostgreSQL
-        num: 90
-      - name: Redis
-        num: 90
-      - name: MySQL/MariaDB
-        num: 80
-      - name: SQLite
-        num: 80
-      - name: MongoDB
-        num: 70
-      - name: Neo4J
-        num: 60
-  - title: automation
-    image: automation.webp
-    description: >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    list:
-      - name: Docker
-        num: 90
-      - name: Scripting
-        num: 90
-      - name: Telegram Bot
-        num: 90
-      - name: Continuous Delivery
-        num: 80
-      - name: Continuous Integration
-        num: 80
 
 languages:
   - Ruby

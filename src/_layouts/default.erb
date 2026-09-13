@@ -4,7 +4,7 @@
     <%= render "head", metadata: site.metadata, title: data.title %>
   </head>
 
-  <body class="bg-gray-50 <%= data.layout %> <%= data.page_class %>">
+  <body class="bg-gray-50 <%= data.layout %>">
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
     <main class="px-4 pb-24 flex flex-col items-center justify-center">
@@ -13,5 +13,7 @@
       </div>
       <%= yield %>
     </main>
+
+    <%= render "footer" %>
   </body>
 </html>

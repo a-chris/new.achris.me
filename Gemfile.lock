@@ -104,7 +104,7 @@ GEM
     rexml (3.4.4)
     roda (3.96.0)
       rack
-    rouge (4.6.0)
+    rouge (4.7.0)
     securerandom (0.4.1)
     serbea (1.0.1)
       activesupport (>= 6.0)
@@ -128,4 +128,4 @@ DEPENDENCIES
   puma (< 7)
 
 BUNDLED WITH
-   4.0.16
+  4.0.16
