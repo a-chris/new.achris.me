@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="post prose max-w-4xl w-full">
+<div class="post prose max-w-4xl w-full mx-auto px-6 md:px-10">
   <h1 class="text-2xl lg:text-4xl"><%= data.title %></h1>
 
   <!-- AddToAny BEGIN -->
@@ -27,7 +27,7 @@ layout: default
     <h4 class="text-secondary">Keep reading</h4>
     <% collections.posts.resources.sample(3).each do |post| %>
       <div class="space-y-2">
-        <div class="card card-compact card-bordered bg-white cursor-pointer border-2 hover:border-gray-300">
+        <div class="card card-compact border border-line bg-surface-2 cursor-pointer transition-colors duration-150 hover:border-line-strong">
           <div class="card-body">
             <div class="flex flex-row">
               <img lazy src="<%= post.data.image %>" class="!my-auto object-cover size-12 md:size-20">
@@ -35,7 +35,7 @@ layout: default
                 <a href="<%= post.relative_url %>" class="block no-underline">
                   <h4 class="font-medium text-xl m-0"><%= post.data.title %></h4>
                 </a>
-                <p class="text-muted !text-base !m-0"><%= post.data.description.truncate(160) %></p>
+                <p class="text-ink-3 !text-base !m-0"><%= post.data.description.truncate(160) %></p>
               </div>
             </div>
           </div>

@@ -1,0 +1,207 @@
+---
+layout: default
+title: A. Christian Toscano
+---
+
+<%# Homepage. Sections are hairline ledgers: a sticky mono label rail on the
+    left, dense content on the right. Curation is explicit (see design.md):
+    projects appear here only when they carry `featured: true`. Priority order:
+    who I am and where I have worked, then the work, then events, then
+    writing. %>
+<% featured = collections.projects.resources.select { |p| p.data.featured } %>
+<% events = site.metadata.events.to_a %>
+
+<div class="band">
+  <div class="shell">
+  <%# HERO. The person first: a face, a name, and a belief. The name is set at
+      the scale a name deserves, and the portrait is baseline-aligned to it and
+      then allowed to hang below, so the top of the page has layers instead of
+      rows. This is the one loud moment on the site. %>
+  <section class="pt-10 pb-16 md:pt-14 md:pb-24">
+    <div class="grid items-end gap-8 md:grid-cols-[minmax(0,1fr)_220px] md:gap-12">
+      <h1 class="display-xl">Christian <em class="italic">Toscano</em></h1>
+
+      <%# The plate hangs into the row below. The text column beside it is
+          narrower than the grid, so nothing collides. %>
+      <div class="md:mb-[-6rem]">
+        <img
+          class="photo photo-warm aspect-square"
+          src="<%= relative_url '/images/avatar.png' %>"
+          alt="A. Christian Toscano"
+          width="295"
+          height="295"
+        >
+        <p class="meta mt-3 flex items-center gap-2">
+          <span class="size-1.5 rounded-full bg-accent" aria-hidden="true"></span>
+          Bologna, Italy
+        </p>
+      </div>
+    </div>
+
+    <%# Registration rule. Three ink bars butted against a hairline, the way a
+        press sheet carries its colour patches: this page is printed in ruby,
+        gold and steel. The only place the family appears together. %>
+    <div class="mt-8 flex items-center gap-2" aria-hidden="true">
+      <span class="h-0.5 w-16 bg-accent"></span>
+      <span class="h-0.5 w-6 bg-gold"></span>
+      <span class="h-0.5 w-6 bg-steel"></span>
+      <span class="h-px flex-1 bg-line"></span>
+    </div>
+
+    <div class="mt-10 max-w-[62ch] md:mt-12">
+      <%# Contacts live in the hero, at the very top of the voice: the fastest
+          path to the person is not at the bottom of the page. %>
+      <ul class="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <% site.metadata.contacts.each do |contact| %>
+          <li>
+            <a class="meta link-quiet" href="<%= contact.url %>" rel="me">
+              <%= contact.name %> ↗
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <%# The positioning line is the voice, so it is the serif at speaking
+          scale. %>
+      <p class="display-talk mt-6">
+        A passionate Backend engineer from Italy. Ruby and Go. Former team lead.
+      </p>
+
+      <%# The belief, said rather than quoted. %>
+      <blockquote class="mt-8">
+        <p class="display-talk text-ink-2">
+          > I believe that technology is designed to simplify people's lives.
+        </p>
+      </blockquote>
+    </div>
+
+    <%# The datasheet strip. Full width, so the three facts read as the page's
+        key rather than as a sidebar. The stack line carries the languages in
+        their own inks: ruby red, steel for Go, gold for Postgres. %>
+    <dl class="mt-16 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-line pt-8 sm:grid-cols-3">
+      <div>
+        <dt class="meta">Now</dt>
+        <dd class="mt-2 font-mono text-[13px] text-ink">Backend at Qonto</dd>
+      </div>
+      <div>
+        <dt class="meta">Stack</dt>
+        <dd class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[13px] text-ink">
+          <span class="flex items-center gap-1.5"><span class="size-1.5 rounded-full bg-accent" aria-hidden="true"></span>Ruby</span>
+          <span class="flex items-center gap-1.5"><span class="size-1.5 rounded-full bg-steel" aria-hidden="true"></span>Go</span>
+          <span class="flex items-center gap-1.5"><span class="size-1.5 rounded-full bg-gold" aria-hidden="true"></span>Postgres</span>
+        </dd>
+      </div>
+      <div>
+        <dt class="meta">Blog</dt>
+        <dd class="mt-2 font-mono text-[13px] text-ink"><%= collections.posts.resources.size %> posts</dd>
+      </div>
+    </dl>
+  </section>
+
+  </div>
+</div>
+
+<%# Every piece of evidence sits on one raised slab. Tone carries the
+    hierarchy; the hairlines inside it carry the sequence. %>
+<div class="band-raised pt-14 pb-0 md:pt-20">
+  <div class="shell">
+
+<%# EXPERIENCE. First after the hero, because the history is the story: every
+    role, not just the headline. Rows link to the employer when a URL exists. %>
+  <section class="section section-grid">
+    <div class="rail">
+      <span class="rail-mark" aria-hidden="true"></span>
+      <p class="index-num mt-3" aria-hidden="true">01</p>
+      <h2 class="rail-label mt-2">Experience</h2>
+    </div>
+    <div>
+      <% site.metadata.timeline.each do |entry| %>
+        <% row_content = capture do %>
+          <span class="spec-key w-full md:w-40"><%= entry.period %></span>
+          <span class="flex-1 min-w-0">
+            <span class="spec-title"><%= entry.title %></span>
+            <% if Array(entry.description).many? %>
+              <span class="mt-1 block spec-meta normal-case"><%= Array(entry.description).join(" · ") %></span>
+            <% else %>
+              <span class="spec-meta hidden md:ml-6 md:inline"><%= Array(entry.description).first %></span>
+            <% end %>
+          </span>
+        <% end %>
+        <% if entry.url %>
+          <a class="spec-row no-underline" href="<%= entry.url %>" target="_blank" rel="noopener"><%= row_content %></a>
+        <% else %>
+          <div class="spec-row spec-row-static"><%= row_content %></div>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
+
+<%# SELECTED WORK. Gold ink: the shipped things. %>
+  <section class="section section-ink-gold section-grid">
+    <div class="rail">
+      <span class="rail-mark" aria-hidden="true"></span>
+      <p class="index-num mt-3" aria-hidden="true">02</p>
+      <h2 class="rail-label mt-2">Projects</h2>
+    </div>
+    <div>
+      <% featured.each do |project| %>
+        <a class="spec-row no-underline" href="<%= project.relative_url %>">
+          <span class="spec-key w-16 md:w-40"><%= project.data.year %></span>
+          <span class="spec-title"><%= project.data.title %></span>
+          <span class="spec-meta hidden md:ml-auto md:inline">
+            <%= Array(project.data.technologies).first(3).join(" · ") %>
+          </span>
+        </a>
+      <% end %>
+      <p class="mt-6">
+        <a class="meta link-quiet" href="<%= relative_url '/projects' %>">All projects →</a>
+      </p>
+    </div>
+  </section>
+
+<%# EVENTS. Steel ink. Attending counts as much as talking: the card itself
+    says which. Shows the two most recent; the rest live on /events.
+    Renders nothing while site.metadata.events is empty. %>
+  <% if events.any? %>
+    <section class="section section-ink-steel section-grid">
+      <div class="rail">
+        <span class="rail-mark" aria-hidden="true"></span>
+        <p class="index-num mt-3" aria-hidden="true">03</p>
+        <h2 class="rail-label mt-2">Events</h2>
+      </div>
+      <div>
+        <ul class="grid gap-x-8 gap-y-10 sm:grid-cols-2">
+          <% events.first(2).each do |talk| %>
+            <%= render "talk", talk: talk %>
+          <% end %>
+        </ul>
+        <p class="mt-6">
+          <a class="meta link-quiet" href="<%= relative_url '/events' %>">All events →</a>
+        </p>
+      </div>
+    </section>
+  <% end %>
+
+<%# WRITING. Ruby again: the thinking belongs to the person. %>
+  <section class="section section-grid">
+    <div class="rail">
+      <span class="rail-mark" aria-hidden="true"></span>
+      <p class="index-num mt-3" aria-hidden="true">04</p>
+      <h2 class="rail-label mt-2">Blog</h2>
+    </div>
+    <div>
+      <% collections.posts.resources.first(3).each do |post| %>
+        <a class="spec-row no-underline" href="<%= post.relative_url %>">
+          <span class="spec-key w-24 md:w-40">
+            <%= post.data.date.strftime("%Y-%m-%d") %>
+          </span>
+          <span class="spec-title"><%= post.data.title %></span>
+        </a>
+      <% end %>
+      <p class="mt-6">
+        <a class="meta link-quiet" href="<%= relative_url '/posts' %>">All posts →</a>
+      </p>
+    </div>
+  </section>
+  </div>
+</div>

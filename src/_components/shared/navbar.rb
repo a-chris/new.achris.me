@@ -1,10 +1,10 @@
 class Shared::Navbar < Bridgetown::Component
-  # Single source of truth for the mobile dropdown and the desktop menu, so the
-  # two can no longer drift apart.
+  # Single source of truth for the top bar, so the two menus can never drift.
+  # The wordmark is the home link, which is why `/` is not in this list.
   NAV_ITEMS = [
-    ['home', '/'],
     ['projects', '/projects'],
-    ['tech stories', '/posts']
+    ['blog', '/posts'],
+    ['events', '/events']
   ].freeze
 
   def initialize(metadata:, resource:)
@@ -16,12 +16,10 @@ class Shared::Navbar < Bridgetown::Component
     NAV_ITEMS
   end
 
-  # `/` matches only the homepage. The others also match their children, so a
-  # post at /posts/view-models/ still highlights "tech stories".
+  # Also matches children, so a post at /posts/view-models/ still highlights
+  # "writing".
   def nav_active?(path)
     current = @resource&.relative_url.to_s
-
-    return current == '/' if path == '/'
 
     current == path || current.start_with?("#{path}/")
   end

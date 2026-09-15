@@ -1,0 +1,25 @@
+<%# One event card, shared by the homepage block and /events, so a caption can
+    never drift between the two. Expects a `talk` local from the `events:` list
+    in site_metadata.yml. `kind` is free-form (conference, workshop, radio
+    interview, ...) and is shown humanized on the chip. %>
+<li>
+  <div class="plate aspect-[4/3]">
+    <img src="<%= relative_url talk.image %>" alt="<%= talk.alt %>" loading="lazy" />
+  </div>
+  <div class="mt-3 flex items-center gap-3">
+    <span class="chip-kind"><%= talk.kind.to_s.tr("_", " ") %></span>
+    <p class="meta"><%= talk.event %> · <%= talk.location %></p>
+  </div>
+  <p class="spec-title mt-1"><%= talk.title %></p>
+  <p class="mt-1.5 text-sm leading-relaxed text-ink-2"><%= talk.description %></p>
+  <% if talk.slides || talk.video %>
+    <p class="mt-2 flex gap-4">
+      <% if talk.slides %>
+        <a class="meta link-accent" href="<%= talk.slides %>">Slides</a>
+      <% end %>
+      <% if talk.video %>
+        <a class="meta link-accent" href="<%= talk.video %>">Video</a>
+      <% end %>
+    </p>
+  <% end %>
+</li>

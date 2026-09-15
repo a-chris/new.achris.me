@@ -1,5 +1,6 @@
 ---
 layout: project
+featured: true
 order: 4
 title: tiTrovo.casa
 date: 2023-05-14 13:08:42 +0200

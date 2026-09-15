@@ -6,10 +6,10 @@
 # in the templates via {{ site.metadata.myvariable }}.
 
 title: A. Christian Toscano
-tagline: Backend Team Leader & Fullstack Developer
+tagline: Backend engineer · Ruby, Go
 description: >-
-  A. Christian Toscano - Backend Team Leader & Fullstack Developer.
-  I write about technical stuff that I learn for my job and my side projects.
+  A. Christian Toscano is a backend engineer in Bologna, Italy. Ruby, Go and
+  Postgres, and running software in production.
 author:
   twitter: achris_15
 twitter:
@@ -26,18 +26,59 @@ contacts:
   - url: https://www.linkedin.com/in/a-chris
     name: Linkedin
 
+# Events render on the homepage (the first two) and in full on /events.
+# Attending counts as much as talking: set kind: speaking for a talk and
+# kind: attending for a conference you were part of. Keys per entry: kind,
+# event, location, title, description, image, alt, and optional slides/video.
+#
+# PLACEHOLDER DATA. The three entries below and the images in
+# src/images/events/ are stand-ins so the layout can be reviewed. Replace the
+# text with real events and the SVGs with real photos before deploying, or set
+# this back to `events: []` to hide the section entirely.
+events:
+  - kind: conference
+    event: Rubycon
+    location: Rimini, Italy
+    title: Rubycon Organizer
+    description: >-
+      RubyDay went away, so a few of us built our own: a full day of Ruby
+      talks in Rimini, speakers picked for what they know rather than who
+      pays, and it ends on a Friday so the sea is right there when it does.
+    image: /images/events/rubycon.png
+    alt: On stage at Rubycon, the Ruby conference in Rimini
+  - kind: radio interview
+    event: Storytime
+    location: Bologna, Italy
+    title: How it feels being a software developer today
+    description: >-
+      An hour on Bologna radio about what this job is actually like, told
+      honestly: the good days, the pages at 3am, and why I still choose it.
+    image: /images/events/storytime.jpeg
+    alt: Recording an interview with Storytime, a radio network in Bologna
+  - kind: workshop
+    event: Devfest
+    location: Modena, Italy
+    title: Build your first MCP server in Ruby
+    description: >-
+      A hands-on session where everyone leaves with a working MCP server in
+      Ruby and at least one idea for what to connect it to.
+    image: /images/events/devfest_workshop.jpg
+    alt: Running the MCP-in-Ruby workshop at DevFest in Modena
+
 timeline:
-  - title: Qonto ✨
+  - title: Qonto
     period: Aug 2025 - current
     url: https://qonto.com
     description:
-      - Ruby Developer
-  - title: Prima Assicurazioni 🚗
+      - Ruby & Go Developer
+      - AI Leader for my team
+  - title: Prima Assicurazioni
     period: May 2024 - Aug 2025
     url: https://www.prima.it
     description:
       - Elixir Developer
-  - title: Extendi 🎸
+      - Security Leader for my team
+  - title: Extendi
     period: Mar 2021 - May 2024
     url: https://www.extendi.it
     description:

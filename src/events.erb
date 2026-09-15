@@ -1,0 +1,37 @@
+---
+layout: default
+title: Events
+---
+<% events = site.metadata.events.to_a %>
+
+<div class="band">
+  <div class="shell">
+  <section class="pt-12 py-12">
+
+    <h1 class="display">
+      <span class="block">Conferences and meetups,</span>
+      <span class="block italic">on stage and in the room.</span>
+    </h1>
+
+    <p class="lead mt-6">
+      Sometimes I am the one talking, about running software in production.
+      Just as often I am in the audience, because that is where the arguments
+      worth having actually start.
+    </p>
+  </section>
+  </div>
+</div>
+
+<% if events.any? %>
+<div class="band-raised pt-14 pb-20 md:pt-20 md:pb-28">
+  <div class="shell">
+    <%# One grid, no split and no rail: the kind chip on each card says
+        whether it was a talk or a visit. %>
+    <ul class="grid gap-x-8 gap-y-12 sm:grid-cols-2">
+      <% events.each do |talk| %>
+        <%= render "talk", talk: talk %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>

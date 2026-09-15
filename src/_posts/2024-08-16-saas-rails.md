@@ -18,7 +18,7 @@ I started my SaaS journey in November 2023, building on my full-stack developmen
 So far, I’ve built three SaaS products:
 
 <div class="space-y-4">
-  <div class="card card-compact card-bordered bg-white cursor-pointer border-2 hover:border-gray-300" onclick="window.open('https://coney.app', '_blank');">
+  <div class="card card-compact border border-line bg-surface-2 cursor-pointer transition-colors duration-150 hover:border-line-strong" onclick="window.open('https://coney.app', '_blank');">
     <div class="card-body">
       <div class="flex flex-row">
         <img lazy src="https://coney.app/favicon.png" class="!my-auto size-12 md:size-20">
@@ -26,14 +26,13 @@ So far, I’ve built three SaaS products:
           <a href="https://coney.app" target="_blank" class="block">
             <h4 class="card-title !text-2xl !mt-0">Coney.app</h4>
           </a>
-          <p class="text-muted !text-lg !m-0">Simplifying Personal Finance</p>
-          <p class="text-muted text-sm !m-0">Share expenses with others, sync to Google Sheets, manage budgets and track recurring costs!</p>
+          <p class="text-ink-3 !text-lg !m-0">Simplifying Personal Finance</p>
+          <p class="text-ink-3 text-sm !m-0">Share expenses with others, sync to Google Sheets, manage budgets and track recurring costs!</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 ## The Good
 
@@ -93,7 +92,6 @@ instead of kilometer-long classes like
 ```
 
 ---
-
 
 ## The Bad
 

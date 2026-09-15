@@ -3,6 +3,8 @@
 @import "jit-refresh.css";
 /* triggers frontend rebuilds */
 
+@import "tokens.css";
+
 @import "components/post.css";
 
 /* Set up Tailwind imports */
@@ -10,14 +12,332 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  text-wrap: pretty;
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+
+@layer base {
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  hr {
+    border-color: var(--line);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Components
+   Everything here reads tokens only. No raw hex values, no shadows.
+   --------------------------------------------------------------------------- */
+
+@layer components {
+  /* Page gutter. One shell width, one rail width, defined in tokens.css. */
+  .shell {
+    @apply mx-auto w-full px-6 md:px-10;
+    max-width: var(--shell);
+  }
+
+  /* A band is a full-bleed tonal zone. Tone carries hierarchy; a hairline
+     inside a band carries sequence. Each band declares what "one step up"
+     means for rows inside it, so a hover always lifts away from its own
+     background instead of towards it. */
+  .band {
+    --raise: var(--surface);
+    @apply w-full;
+    background-color: var(--canvas);
+  }
+
+  .band-raised {
+    --raise: var(--surface-2);
+    background-color: var(--surface);
+  }
+
+  /* The first section in a band sits directly under a change of tone, so its
+     own top rule would be a redundant second edge. */
+  .band > .shell > .section:first-child,
+  .band-raised > .shell > .section:first-child {
+    @apply border-t-0 pt-0;
+  }
+
+  /* A section is a hairline plus a two column grid: a sticky label rail and
+     the content. This is the page's structural signature. */
+  /* A section is a hairline plus a two column grid: a sticky label rail and
+     the content. This is the page's structural signature. Each section also
+     claims a registration ink: .section-ink-gold for work, .section-ink-steel
+     for events; everything else is ruby by default. */
+  .section {
+    @apply border-t border-line pt-8 pb-14 md:pt-10 md:pb-20;
+    --section-ink: var(--accent);
+  }
+
+  .section-ink-gold {
+    --section-ink: var(--gold);
+  }
+
+  .section-ink-steel {
+    --section-ink: var(--steel);
+  }
+
+  .section-grid {
+    @apply md:grid md:items-start md:gap-x-12;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+  }
+
+  .rail {
+    @apply mb-4 md:mb-0 md:sticky md:top-24;
+  }
+
+  .rail-label {
+    @apply font-mono text-[12px] tracking-[0.05em] text-ink-3;
+  }
+
+  /* The rail's ink bar: a short mark in the section's registration ink,
+     printed above the label like a colour patch on a press sheet. */
+  .rail-mark {
+    @apply block h-0.5 w-6;
+    background-color: var(--section-ink);
+  }
+
+  /* The display face is the serif, and it is the only place the serif appears
+     set large. It carries the person: the name, and the one statement a page
+     makes. Sans carries reading, mono carries data. */
+  .display {
+    @apply font-serif text-[clamp(2.25rem,5.5vw,3.5rem)] leading-[1.04] font-medium tracking-[-0.02em];
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+
+  /* The name, at the scale a name deserves. One line on desktop, and the only
+     element on the site that is allowed to be this loud. */
+  .display-xl {
+    @apply font-serif font-medium;
+    /* The floor is high enough that on a phone the name breaks to two lines,
+       which is the mobile version of the same gesture rather than a smaller
+       copy of it. SOFT rounds the terminals, WONK lets Fraunces misbehave on
+       a few glyphs: the name is allowed to be friendly. */
+    font-size: clamp(2.75rem, 8.5vw, 6.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  }
+
+  /* A statement set in the display serif at conversational scale, used for
+     the hero positioning line and the belief. Italic spans inside it are the
+     voice leaning forward. */
+  .display-talk {
+    @apply font-serif font-medium text-ink;
+    font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 60, "SOFT" 100;
+  }
+
+  /* The hero uses exactly two faces: this mono for everything that is read as
+     a fact (the lead, the datasheet), the serif for the voice. The sans is
+     banned from the hero on purpose; two faces keep it a printed sheet rather
+     than a web page. */
+  .lead-hero {
+    @apply font-mono text-[0.9375rem] leading-[1.7] text-ink-2;
+  }
+
+  .lead {
+    @apply text-[1.1875rem] leading-[1.55] text-ink-2;
+  }
+
+  /* A photograph. 1px hairline, softly rounded: photos are objects resting
+     on the page, not geometry cut into it. */
+  .photo {
+    @apply w-full border border-line object-cover;
+    border-radius: var(--radius-md);
+  }
+
+  /* A portrait, warmed so it sits on the ink ground instead of fighting it.
+     Portraits stay recognisable: a face is not a print plate. */
+  .photo-warm {
+    filter: sepia(0.16) saturate(1.05) contrast(1.02);
+  }
+
+  /* A photographic plate: 1px hairline, rounded, original colours. The ruby
+     duotone was retired by owner decision: photos show up as shot. */
+  .plate {
+    @apply relative overflow-hidden border border-line;
+    border-radius: var(--radius-md);
+  }
+
+  .plate img {
+    @apply block h-full w-full object-cover;
+  }
+
+  /* Oversized decorative numerals that index the sections, printed in the
+     section's registration ink. Set in the serif, roman: an editorial folio
+     number. Italic is reserved for the name on the homepage. */
+  .index-num {
+    @apply leading-none;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 2.625rem;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    color: var(--section-ink);
+  }
+
+  /* Labels. Sentence case and loosely tracked, not shouted: uppercase mono
+     was the single most "enterprise" thing left in the system. Used for
+     section rails, nav, contacts and the hero key-value grid. */
+  .meta {
+    @apply font-mono text-[12px] tracking-[0.05em] text-ink-3;
+  }
+
+  /* Ledger key column: the year, date or period that starts a row. One width
+     for every section, so the content column lands on the same axis all the
+     way down the page. */
+  .spec-key {
+    @apply shrink-0 font-mono text-[12px] tracking-[0.05em] text-ink-3;
+  }
+
+  /* Ledger value column: the stack string or role that ends a row. Same face
+     as the key but sentence case, so a long value does not shout. */
+  .spec-meta {
+    @apply font-mono text-[12px] text-ink-3;
+  }
+
+  /* A dense ledger row. No bottom rule: the ruling lines were what made the
+     page read as an invoice. Rows separate by whitespace at rest and by a
+     rounded fill in the section ink on hover. */
+  .spec-row {
+    @apply flex flex-wrap items-baseline gap-x-4 gap-y-1 py-3 pr-3 pl-4;
+    border-left: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    transition:
+      background-color 120ms ease-out,
+      border-color 120ms ease-out;
+  }
+
+  .spec-row:hover {
+    background-color: var(--raise);
+    border-left-color: var(--section-ink);
+  }
+
+  /* On hover the row leans forward: the period brightens and the title picks
+     up a little of the section ink. Keeps the 120ms language; adds a pulse of
+     colour to an otherwise sober ledger. */
+  .spec-row:hover .spec-key {
+    color: var(--ink-2);
+  }
+
+  .spec-title {
+    @apply text-[15px] font-medium text-ink;
+    transition: color 120ms ease-out;
+  }
+
+  /* A row that states a fact rather than links anywhere (experience entries
+     without a URL, the datasheet strip). No hover fill; it is a record, not a
+     control. */
+  .spec-row-static {
+    border-left-color: transparent;
+  }
+
+  .spec-row-static:hover {
+    background-color: transparent;
+    border-left-color: transparent;
+  }
+
+  /* A chip is filled with the lightest black and carries no border: the tone
+     is the boundary. */
+  .chip {
+    @apply inline-flex items-center px-2 py-0.5 font-mono text-[11px] tracking-[0.08em] text-ink-2 uppercase;
+    background-color: var(--surface-3);
+    border-radius: var(--radius-sm);
+  }
+
+  /* A kind chip carries a leading dot in the section ink, so "talk" vs
+     "attended" reads at a glance without adding a second colour. */
+  .chip-kind {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 font-mono text-[12px] tracking-[0.05em] text-ink-2;
+    background-color: var(--surface-3);
+    border-radius: var(--radius-sm);
+  }
+
+  .chip-kind::before {
+    content: "";
+    @apply size-1.5 rounded-full;
+    background-color: var(--section-ink, var(--accent));
+  }
+
+  .btn-spec {
+    @apply inline-flex min-h-11 items-center gap-2 border px-4 py-2 font-mono text-[11px] tracking-[0.12em] text-ink uppercase;
+    border-color: var(--line-interactive);
+    border-radius: var(--radius-sm);
+    transition:
+      background-color 120ms ease-out,
+      border-color 120ms ease-out,
+      color 120ms ease-out;
+  }
+
+  .btn-spec:hover {
+    background-color: var(--raise);
+    border-color: var(--ink-3);
+  }
+
+  /* The primary action is solid ink, not accent. The accent stays reserved for
+     marks, so a page never has two things shouting. */
+  .btn-spec-solid {
+    background-color: var(--ink);
+    border-color: var(--ink);
+    color: var(--canvas);
+  }
+
+  .btn-spec-solid:hover {
+    background-color: var(--ink-2);
+    border-color: var(--ink-2);
+    color: var(--canvas);
+  }
+
+  .link-quiet {
+    @apply text-ink-2;
+    transition: color 120ms ease-out;
+  }
+
+  .link-quiet:hover {
+    color: var(--ink);
+  }
+
+  .link-accent {
+    @apply text-accent-text underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .link-accent:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Keyboard skip link: visible only when focused. */
+  .skip-link {
+    @apply absolute top-2 left-2 z-[60] -translate-y-16 border px-3 py-2 font-mono text-[12px] tracking-[0.05em];
+    background-color: var(--surface);
+    border-color: var(--line-interactive);
+    border-radius: var(--radius-sm);
+    transition: transform 120ms ease-out;
+  }
+
+  .skip-link:focus {
+    @apply translate-y-0;
+  }
 }
 
 /* Keyboard focus has to stay visible. Tailwind's preflight leaves this to the
    browser default, which drifts once buttons and links get restyled. */
 :focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--accent-text);
   outline-offset: 2px;
 }
 
@@ -25,32 +345,32 @@
    `.current-page` class from inline JS, on an element id duplicated between the
    mobile and desktop menus, and no CSS ever defined that class. */
 .navbar [aria-current="page"] {
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: var(--ink);
 }
 
-ul.custom li::before {
-  content: attr(data-icon);
-  /* Make slightly larger than the li font-size
-  but smaller than the li gap */
+.post.prose img {
+  border-radius: var(--radius-md);
 }
 
-.post.prose {
-  img {
-    border-radius: 0.4em;
-  }
+/* Code wells are rounded objects like photographs, not slabs cut into the
+   page. */
+.prose pre {
+  border-radius: var(--radius-md);
 }
+
+/* ---------------------------------------------------------------------------
+   TRANSITIONAL. Only here so pages that have not been migrated yet stay on
+   palette while they still use daisyUI and Tailwind surface utilities.
+   Each block below disappears with the page that needs it.
+   --------------------------------------------------------------------------- */
 
 @layer components {
-
   .btn {
     @apply shadow-none;
-    @apply outline-none;
-    @apply border-none;
   }
 
   .badge-ghost {
-    @apply bg-slate-50;
+    @apply border-line text-ink-2;
+    background-color: var(--surface-2);
   }
 }
